@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.newland.sri.ccp.rtc.rtcframework:frameworkapi:3.0.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/newland/sri/ccp/rtc/rtcframework/frameworkapi/3.0.0-SNAPSHOT/frameworkapi-3.0.0-20180117.085454-27.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/newland/sri/ccp/rtc/rtcframework/frameworkapi/3.0.0-SNAPSHOT/frameworkapi-3.0.0-20180117.085454-27-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/newland/sri/ccp/rtc/rtcframework/frameworkapi/3.0.0-SNAPSHOT/frameworkapi-3.0.0-20180117.085454-27-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

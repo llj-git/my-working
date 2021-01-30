@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="bdsWeb:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>bdsWeb</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="bdsWeb.war">
+      <element id="artifact" artifact-name="bdsWeb:war exploded" />
+    </root>
+  </artifact>
+</component>

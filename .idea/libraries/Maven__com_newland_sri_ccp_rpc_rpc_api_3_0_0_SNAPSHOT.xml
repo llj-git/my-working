@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.newland.sri.ccp.rpc:rpc-api:3.0.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/newland/sri/ccp/rpc/rpc-api/3.0.0-SNAPSHOT/rpc-api-3.0.0-20170115.064115-256.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/newland/sri/ccp/rpc/rpc-api/3.0.0-SNAPSHOT/rpc-api-3.0.0-20170115.064115-256-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/newland/sri/ccp/rpc/rpc-api/3.0.0-SNAPSHOT/rpc-api-3.0.0-20170115.064115-256-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

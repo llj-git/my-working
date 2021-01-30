@@ -1,0 +1,58 @@
+#true:init zk Data,false not init zk
+zk.switch=true
+
+#B3,IOT
+project.flag=B3
+
+zk.connect.host=10.1.8.105:2187
+zk.connect.timeout=5000
+zk.connect.policy=1
+
+zk.parserCDR-in.a.path=/config/type-parserCDR-in/a
+zk.parserCDR-in.b.path=/config/type-parserCDR-in/b
+zk.parserCDR-out.a.path=/config/type-parserCDR-out/a
+zk.parserCDR-out.b.path=/config/type-parserCDR-out/b
+zk.bcn.a.path=/config/type-bcn/a
+zk.bcn.b.path=/config/type-bcn/b
+zk.bcsn.a.path=/config/type-bcsn/a
+zk.bcsn.b.path=/config/type-bcsn/b
+zk.ocsn.a.path=/config/type-ocsn/a
+zk.ocsn.b.path=/config/type-ocsn/b
+zk.bbds.a.path=/config/type-bbds/a
+zk.bbds.b.path=/config/type-bbds/b
+zk.obds.a.path=/config/type-obds/a
+zk.obds.b.path=/config/type-obds/b
+zk.busr.a.path=/config/type-busr/a
+zk.busr.b.path=/config/type-busr/b
+zk.ousr.a.path=/config/type-ousr/a
+zk.ousr.b.path=/config/type-ousr/b
+
+zk.app.path.mapping=[parserCDR-in.a:zk.parserCDR-in.a.path,parserCDR-in.b:zk.parserCDR-in.b.path,parserCDR-out.a:zk.parserCDR-out.a.path,parserCDR-out.b:zk.parserCDR-out.b.path,bcn.a:zk.bcn.a.path,bcn.b:zk.bcn.b.path,bcsn.a:zk.bcsn.a.path,bcsn.b:zk.bcsn.b.path,ocsn.a:zk.ocsn.a.path,ocsn.b:zk.ocsn.b.path,bbds.a:zk.bbds.a.path,bbds.b:zk.bbds.b.path,obds.a:zk.obds.a.path,obds.b:zk.obds.b.path,busr.a:zk.busr.a.path,busr.b:zk.busr.b.path,ousr.a:zk.ousr.a.path,ousr.b:zk.ousr.b.path]
+#need switch
+zk.bds.switch.include=bds.a,bds.b
+#bds main bak config path
+zk.bds.state.path=/sysinfo/sys-state/bds
+
+bds.node.path.mapping.a=0:/config/type-bds/a,1:/config/type-bds/a,2:/config/type-bds/a
+bds.node.path.mapping.b=0:/config/type-bds/b,1:/config/type-bds/b,2:/config/type-bds/b
+
+#bds service path
+zk.bds.services.path=/services
+#ignite service path
+zk.ignite.services.path=/sysinfo/sys-state/cache
+
+zk.cfg=1#boss3(na-jf-zk1:2181,na-jf-zk2:2181,na-jf-zk3:2181)|2#boss3_dev(10.1.8.104:2182)|3#boss3_local(10.1.1.45:2181)
+
+username=bossapp
+password=ent#a17xV
+
+#ignite service ip
+#centerA
+A.ignite.service.ip = 10.48.183.57:44466,10.1.8.159:44466
+#centerB
+B.ignite.service.ip = 10.48.183.57:44466,10.1.8.159:44466
+
+#Agency
+AgencyIP = 10.1.8.105
+AgencyPort = 8090
+

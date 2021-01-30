@@ -1,0 +1,375 @@
+<html ng-app="igniteManage">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--[if lt IE 9]>
+<script src="resources/skeleton/js/modernizr.js "></script>
+<script src="resources/skeleton/js/amazeui.ie8polyfill.min.js"></script>
+<script src="resources/skeleton/js/angular.min-1.2.32.js"></script>
+<![endif]-->
+<!--[if gte IE 9]><!-->
+<script src="resources/skeleton/js/angular.min-1.6.5.js"></script>
+<!--<![endif]-->
+<script type="text/javascript"
+	src="resources/skeleton/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript"
+	src="resources/skeleton/js/amazeui.min.js"></script>
+	<script type="text/javascript"
+	src="resources/skeleton/js/ng-csv.min.js"></script>
+	<script type="text/javascript"
+	src="resources/skeleton/js/angular-sanitize.min.js"></script>
+<link rel="stylesheet" type="text/css"
+	href="resources/skeleton/css/amazeui.min.css" />
+<link rel="stylesheet" type="text/css"
+	href="resources/skeleton/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css"
+	href="resources/skeleton/zTree/css/zTreeStyle/zTreeStyle.css" />
+<script type="text/javascript"
+	src="resources/skeleton/zTree/js/jquery.ztree.all.min.js"></script>
+<script type="text/javascript"
+	src="resources/skeleton/zTree/js/jquery.ztree.core.min.js"></script>
+<script type="text/javascript"
+	src="resources/skeleton/zTree/js/jquery.ztree.exhide.min.js"></script>
+<script type="text/javascript"
+	src="resources/skeleton/zTree/js/jquery.ztree.exedit.min.js"></script>
+
+<link rel="stylesheet" type="text/css"
+	href="resources/skeleton/css/bootstrap.min.css" />
+<script type="text/javascript"
+	src="resources/skeleton/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript"
+	src="resources/skeleton/plugins/ngtable/js/ng-table.min.js"></script>
+<script type="text/javascript"
+	src="resources/skeleton/plugins/layer/1.9.3/layer.js"></script>
+<script src="resources/includeCss_3rd.js"></script>	
+<script src="resources/biz/controller/igniteMonitor.js"></script>
+
+<style>
+div, body, html {
+	margin: 0;
+	padding: 0;
+}
+
+#left, #right, #middle {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	margin: 0;
+	padding: 0;
+}
+
+#left {
+	width: 200px;
+	background: #FFFFFF;
+}
+
+#middle {
+	width: 5px;
+	background: #FFFFFF;
+	left: 200px;
+}
+
+#middle:hover {
+	cursor: w-resize;
+}
+
+#right {
+	right: 0;
+	background: #FFFFFF;
+	left: 205px;
+	width: auto;
+}
+
+#pk {
+	width: 30%;
+	padding: 18px;
+	float: left;
+}
+
+#index {
+	width: 50%;
+	padding: 18px;
+	float: left;
+}
+
+.title {
+	font-weight: bold;
+}
+
+.headborder {
+	border: 1px solid #ddd;
+	border-right-width: 0.5px;
+	padding-top: 8.4px;
+	padding-bottom: 8.4px;
+}
+
+.list {
+	width: 25%;
+	float: left;
+	padding: 8.4px;
+	border: 1px solid #ddd;
+	/*合并边框*/
+	border-collapse: collapse;
+}
+
+#index .indexselect {
+	height: 33px;
+	width: 180px;
+}
+
+#index .indexvalue {
+	height: 33px;
+	width: 118px;
+}
+
+nav {
+	position: relative;
+	width: 100%;
+	height: 50px;
+}
+
+.pagination {
+	right: 200px;
+	position: absolute;
+}
+
+nav li {
+	cursor: pointer;
+}
+
+nav li a:hover {
+	background: black;
+}
+
+.pagination li {
+	display: inline;
+}
+
+.pagination li input {
+	border: 1px solid black;
+}
+
+.pagination>li>a, .pagination>li>span {
+	position: relative;
+	float: left;
+	padding: 6px 12px;
+	margin-left: -1px;
+	line-height: 1.42857143;
+	color: #337ab7;
+	text-decoration: none;
+	background-color: #fff;
+	border: 1px solid #ddd;
+}
+
+.pagination>li:first-child>a, .pagination>li:first-child>span {
+	margin-left: 0;
+	border-top-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+}
+
+.pagination>li:last-child>a, .pagination>li:last-child>span {
+	border-top-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+}
+
+#divMain {
+	width: autopx;
+	margin: 0 auto;
+	margin-top: 30px;
+}
+
+nav {
+	position: relative;
+	width: 100%;
+	height: 50px;
+}
+
+nav li {
+	cursor: pointer;
+}
+
+table, table tr th, table tr td {
+	border: 1px solid #0094ff;
+}
+
+.content{
+        height:25px;
+        width:100px;
+        overflow:hidden;
+        text-overflow:ellipsis
+    }
+ 
+    .content:hover{
+        height:auto;
+        width:auto;
+    }
+</style>
+
+
+</head>
+<body ng-controller="igniteManageController as dm1">
+	<div id="ignite_app">
+		<div>
+		<!--  
+		<table ng-table="dml" id="dataTable"
+			class="table table-condensed table-bordered table-striped am-table-hover">
+			<tr>
+ 				<th style="background: #3F7CE7;color:#FFF;">序号</th>				
+				<th ng-repeat="(column,columnValue) in params"  style="background: #3F7CE7;color:#FFF;">
+					{{column}}
+				</th>
+			</tr>
+			<tr">
+				<th id="rowId" value="">{{$index+1}}</th>	
+				<td ng-repeat="(column,columnValue) in params"  style="text-align: center">
+					{{columnValue}}
+				</td>
+			</tr>
+		</table>-->	
+		
+		
+		  
+		
+			<table  id="igniteRunning"
+					class="table table-condensed table-bordered table-striped am-table-hover" ng-repeat="data in params">
+					<tr>
+ 				<th style="background: #3F7CE7;color:#FFF;">序号</th>				
+				<th ng-repeat="(column,columnValue) in params[0]"  style="background: #3F7CE7;color:#FFF;">
+					{{column}}
+				</th>
+			</tr>
+			<tr>
+				<th id="rowId" value="">{{$index+1}}</th>	
+				<td ng-repeat="(column,columnValue) in params[0]"  style="text-align: center">
+					{{columnValue}}
+				</td>
+			</tr>
+			
+			<!--  
+					<tr>
+						<td><font size="1" color="grey">状态:{{data.state}}</font></td>
+						<td><font size="1" color="grey">集群实例名:{{data.name}}</td>
+						<td><font size="1" color="grey">当前版本：{{data.version}}</td>
+						<td><font size="1" color="grey">主机数：{{data.hostSize}}</td>
+						<td><font size="1" color="grey">节点数：{{data.nodeSize}}</td>
+					</tr>
+					
+					<tr>
+						<td><font size="1" color="grey">CPU总数：{{data.totalCpus}}</td>
+						<td><font size="1" color="grey">当前CPU负载：{{data.currentCpuLoad}}</td>
+						<td><font size="1" color="grey">平均CPU负载：{{data.averageCpuLoad}}</td>
+						<td><font size="1" color="grey">GC负载：{{data.currentGcCpuLoad}}</td>
+						<td><font size="1" color="grey">已使用堆内存大小：{{data.heapMemoryUsed}}</td>
+					</tr>
+					
+					<tr>
+						<td><font size="1" color="grey">空闲堆内存大小：{{data.heapMemoryFree}}</td>
+						<td><font size="1" color="grey">堆内存总大小：{{data.heapMemoryTotal}}</td>
+						<td><font size="1" color="grey">所有缓存的内存使用量：{{data.offHeapMemoryUsed}}</td>
+						<td><font size="1" color="grey">空闲缓存内存：{{data.offHeapMemoryFree}}</td>
+						<td><font size="1" color="grey">内存总量：{{data.offHeapMemoryTotal}}</td>
+					</tr>
+					
+					<tr>
+						<td><font size="1" color="grey">执行任务数：{{data.totalExecutedJobs}}</td>
+						<td><font size="1" color="grey">取消任务数：{{data.totalCancelledJobs}}</td>
+						<td><font size="1" color="grey">失败任务数：{{data.totalRejectedJobs}}</td>
+						<td><font size="1" color="grey">当前执行任务数：{{data.currentActiveJobs}}</td>
+						<td><font size="1" color="grey">任务平均执行时长：{{data.averageJobExecuteTime}}</td>
+					</tr>
+					
+					<tr>
+						<td><font size="1" color="grey">节点启动时间：{{data.nodeStartTime}}</td>
+						<td><font size="1" color="grey">更新时间：{{data.lastUpdateTime}}</td>
+						<td><font size="1" color="grey">缓存总数：{{data.lastUpdateTime}}</td>
+						<td><font size="1" color="grey">分区缓存总数：{{data.partitionedCacheSize}}</td>
+						<td><font size="1" color="grey">全复制缓存总数：{{data.replicatedCacheSize}}</td>
+					</tr>
+					
+					<tr>
+					
+					<td>
+					 <font size="1" color="grey">本地缓存总数:{{data.localCacheSize}}
+					</td>
+					<td><font size="1" color="grey"></td>
+						<td><font size="1" color="grey"></td>
+						<td><font size="1" color="grey"></td>
+						<td><font size="1" color="grey"></td>
+					</tr>
+					-->
+			</table>
+		</div>
+
+			
+			<div class="am-input-group am-input-group-sm"
+					style="float: left; width: 200px; height: 30px">
+					<span class="am-input-group-label"  style="background-color:#3276b1;height: 30px;"><font color="white">集群节点列表查看</font></span> 
+					<button class="btn btn-primary btn-sm" type="button"
+							ng-click="getNodes();" style="height: 30px;float: left; width: 50px; height: 35px;background-color:#3276b1;">查看
+							<span class="am-icon-search"></span>
+						</button>
+				</div>
+			
+			
+			
+			<!--  节点列表-->
+			<div id="divMain" style="display:none;">
+			
+			<table ng-table="dml" id="dataTable"
+			class="table table-condensed table-bordered table-striped am-table-hover">
+			<tr>
+ 				<th style="background: #3F7CE7;color:#FFF;">序号</th>				
+				<th ng-repeat="(column,columnValue) in items[0]"  style="background: #3F7CE7;color:#FFF;">
+					{{column}}
+				</th>
+			</tr>
+			<tr ng-repeat="data in items">
+				<th id="rowId" value="">{{$index+1}}</th>	
+				<td ng-repeat="(column,columnValue) in data"  style="text-align: center">
+					{{columnValue}}
+				</td>
+			</tr>
+		</table>
+			
+			
+			<!--  
+				<table class="table table-bordered"
+					style=" width: 100%;" id="tb_1">
+					<tbody>
+					<tr bgcolor="#99CCFF">
+						<th ng-repeat="(x,y) in items[0]" width="20px" title="{{ x }}"
+							style="text-overflow: ellipsis; overflow: hidden;" nowrap><div class="content">{{
+							x }}</div></th>
+					</tr>
+					<tr ng-repeat="item in items">
+						<td ng-repeat="(x,y) in item" width="20px" title="{{ y }}"
+							style="text-overflow: ellipsis; overflow: hidden;" nowrap><div class="content">{{
+							y }}</div></td>
+					</tr>
+					</tbody>
+				</table>-->
+			</div>
+
+			
+			
+			
+			<!-- 分页-->
+			<div id="page" style="display:none;">
+				<nav>
+					<ul class="pagination">
+						<li><a ng-click="Previous()"> <span>上一页</span>
+						</a></li>
+						<li ng-repeat="page in pageList"
+							ng-class="{active: isActivePage(page)}"><a
+							ng-click="selectPage(page)"` >{{ page }}</a></li>
+						<li><a ng-click="Next()"> <span>下一页</span>
+						</a></li>
+						<li><a ng-click="getNodes()"> <span>刷新</span>
+						</a></li>
+					</ul>
+				</nav>
+			</div>
+			
+	</div>
+</body>
+</html>

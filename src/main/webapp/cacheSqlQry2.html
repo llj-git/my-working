@@ -1,0 +1,347 @@
+<html ng-app="zkManage">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--[if lt IE 9]>
+<script src="resources/skeleton/js/modernizr.js "></script>
+<script src="resources/skeleton/js/amazeui.ie8polyfill.min.js"></script>
+<script src="resources/skeleton/js/angular.min-1.2.32.js"></script>
+<![endif]-->
+<!--[if gte IE 9]><!-->
+<script src="resources/skeleton/js/angular.min-1.6.5.js"></script>
+<!--<![endif]-->
+<script type="text/javascript"
+	src="resources/skeleton/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript"
+	src="resources/skeleton/js/amazeui.min.js"></script>
+<link rel="stylesheet" type="text/css"
+	href="resources/skeleton/css/amazeui.min.css" />
+<link rel="stylesheet" type="text/css"
+	href="resources/skeleton/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css"
+	href="resources/skeleton/zTree/css/zTreeStyle/zTreeStyle.css" />
+<script type="text/javascript"
+	src="resources/skeleton/zTree/js/jquery.ztree.all.min.js"></script>
+<script type="text/javascript"
+	src="resources/skeleton/zTree/js/jquery.ztree.core.min.js"></script>
+<script type="text/javascript"
+	src="resources/skeleton/zTree/js/jquery.ztree.exhide.min.js"></script>
+<script type="text/javascript"
+	src="resources/skeleton/zTree/js/jquery.ztree.exedit.min.js"></script>
+<script src="resources/biz/controller/cacheSqlQry.js"></script>
+<style>
+div, body, html {
+	margin: 0;
+	padding: 0;
+}
+
+#left, #right, #middle {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	margin: 0;
+	padding: 0;
+}
+
+#left {
+	width: 200px;
+	background: #FFFFFF;
+}
+
+#middle {
+	width: 5px;
+	background: #FFFFFF;
+	left: 200px;
+}
+
+#middle:hover {
+	cursor: w-resize;
+}
+
+#right {
+	right: 0;
+	background: #FFFFFF;
+	left: 205px;
+	width: auto;
+	height:auto;
+}
+
+#pk {
+	width: 100%;
+	float: left;
+}
+
+#index {
+	width: 50%;
+	padding: 18px;
+	float: left;
+}
+
+.title {
+	font-weight: bold;
+}
+
+.headborder {
+	border: 1px solid #ddd;
+	border-right-width: 0.5px;
+	padding-top: 8.4px;
+	padding-bottom: 8.4px;
+}
+
+.list {
+	width: 25%;
+	float: left;
+	padding: 8.4px;
+	border: 1px solid #ddd;
+	/*合并边框*/
+	border-collapse: collapse;
+}
+
+#index .indexselect {
+	height: 33px;
+	width: 180px;
+}
+
+#index .indexvalue {
+	height: 33px;
+	width: 118px;
+}
+
+#divMain {
+	width: auto;
+	height:450px;
+	margin: 0px 0px 200px 0px;
+}
+
+nav {
+	position: relative;
+	width: 100%;
+	height: 50px;
+}
+
+nav li {
+	cursor: pointer;
+}
+
+nav {
+	position: relative;
+	width: 100%;
+	height: 50px;
+}
+
+.pagination {
+	right: 200px;
+	position: absolute;
+}
+
+nav li {
+	cursor: pointer;
+}
+
+nav li a:hover {
+	background: black;
+}
+
+.pagination li {
+	display: inline;
+}
+
+.pagination li input {
+	border: 1px solid black;
+}
+
+.pagination>li>a, .pagination>li>span {
+	position: relative;
+	float: left;
+	padding: 6px 12px;
+	margin-left: -1px;
+	line-height: 1.42857143;
+	color: #337ab7;
+	text-decoration: none;
+	background-color: #fff;
+	border: 1px solid #ddd;
+}
+
+.pagination>li:first-child>a, .pagination>li:first-child>span {
+	margin-left: 0;
+	border-top-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+}
+
+.pagination>li:last-child>a, .pagination>li:last-child>span {
+	border-top-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+}
+
+.scroll_table_ot {
+	margin: 0px 0px 20px 20px;
+	line-height: 18px;
+	width: 800px;
+	font-size: 14px;
+}
+
+.scroll_table_ot .scroll {
+	max-height: 300px;
+	border: 1px solid #6a6a6a;
+	border-top: 0;
+	overflow-y: auto;
+	border-right: 0;
+}
+
+.scroll_table_ot table {
+	width: 100%;
+	table-layout: fixed;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+#td1 {
+	width: 250px;
+	padding: 10px;
+	border: 1px solid #6a6a6a;
+	align:center;
+}
+
+#td2 {
+	width: 550px;
+	padding: 10px;
+	border: 1px solid #6a6a6a;
+	align:center;
+}
+
+#th1 {
+	font-weight: bold;
+	width: 250px;
+	padding: 10px;
+	border: 1px solid #6a6a6a;
+	align:center;
+}
+
+#th2 {
+	font-weight: bold;
+	width: 550px;
+	padding: 10px;
+	border: 1px solid #6a6a6a;
+	align:center;
+}
+
+.scroll_table_ot thead th:last-child, .scroll_table_ot tbody td:last-child
+	{
+	width: auto;
+}
+
+.scroll_table_ot tbody tr:first-child td {
+	border-top: 0;
+}
+
+.scroll_table_ot tbody tr:last-child td {
+	border-bottom: 0;
+}
+
+.scroll_table_ot tbody tr td:first-child {
+	border-left: 0;
+}
+
+.scroll_table_ot tbody tr td:last-child {
+	border-right: 0;
+}
+
+#sqlmain table, table tr th, table tr td {
+	border: 1px solid #0094ff;
+}
+</style>
+
+
+</head>
+<body ng-controller="zkManageController">
+	<!-- 	<div style="padding-top: 2px"></div>
+	<header class="am-topbar am-topbar-inverse admin-header"
+		style="margin-bottom: 0px;">
+		<div class="am-topbar-brand">
+			<strong>Zookeeper</strong> <small>管理系统</small>
+		</div>
+	</header> -->
+	<div id="zk_app">
+		<div id="left" class="am-panel am-panel-default">
+			<div class="am-panel-hd">缓存列表</div>
+			<div
+				style="height: 100%; width: 100%; position: absolute; overflow: scroll;">
+				<p>
+					<input type="text" ng-model="test" placeholder="请在这里Cachename">
+				</p>
+				<ul id="treeDemo" class="ztree" ng-model="selectNode" value="1"
+					style="height: 100%; width: 100%; position: absolute; border: 0px; padding-top: 10px; margin: 0;">
+					<li ng-repeat="x in cacheNames | filter:test | orderBy:x"
+						ng-click="getDomain(x)">{{ x }}</li>
+				</ul>
+			</div>
+		</div>
+
+		<div id="right" class="am-panel am-panel-default"
+			ng-repeat="nodeInfo in Info"
+			style="height: 100%; width: 100%; position: absolute;">
+				<div class="scroll_table_ot" id="tabledata" style="display:none;">
+					<table>
+						<thead>
+							<tr>
+								<th id="th1">关键字</th>
+								<th id="th2">输入</th>
+							</tr>
+						</thead>
+					</table>
+					<div class="scroll scrollbarStyle">
+						<table>
+							<tbody>
+								<tr ng-repeat="x in params">
+									<td id="td1"><font color="red">{{x}}:</td>
+									<td id="td2"><input type="text" type="text"
+										ng-trim="false" ng-model="$parent.conf[$index]"></td>
+								</tr>
+								<tr>
+									<td id="td1" style="border-right-style:none"></td>
+									<td align="right" id="td2" style="border-left-style:none"><button type="button"
+											class="btn btn-primary btn-sm" ng-click="submitForm()">提交</button></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+
+				<div id="sqlmain" style="display:none;">
+					<div id="divMain">
+						<table
+							style="table-layout: fixed; white-space: nowrap; width: 100%;">
+							<tr bgcolor="#99CCFF">
+								<th ng-repeat="(x,y) in items[0]" width="30%" height="20px" title="{{ x }}"
+									style="text-overflow: ellipsis; overflow: hidden;" nowrap>{{
+									x }}</th>
+							</tr>
+							<tr ng-repeat="item in items">
+								<td ng-repeat="(x,y) in item" width="30%" title="{{ y }}"
+									style="text-overflow: ellipsis; overflow: hidden;" nowrap>{{
+									y }}</td>
+							</tr>
+						</table>
+						<div>
+						<nav>
+							<ul class="pagination">
+								<li><a ng-click="Previous()"> <span>上一页</span>
+								</a></li>
+								<li ng-repeat="page in pageList"
+									ng-class="{active: isActivePage(page)}"><a
+									ng-click="selectPage(page)"` >{{ page }}</a></li>
+								<li><a ng-click="Next()"> <span>下一页</span>
+							</ul>
+						</nav>
+					</div>
+					</div>
+				</div>
+
+
+
+
+		</div>
+	</div>
+</body>
+</html>

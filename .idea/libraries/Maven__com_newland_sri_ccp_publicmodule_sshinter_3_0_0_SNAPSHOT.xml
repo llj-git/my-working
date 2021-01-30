@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.newland.sri.ccp.publicmodule:sshinter:3.0.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/newland/sri/ccp/publicmodule/sshinter/3.0.0-SNAPSHOT/sshinter-3.0.0-20180104.011858-2.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/newland/sri/ccp/publicmodule/sshinter/3.0.0-SNAPSHOT/sshinter-3.0.0-20180104.011858-2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/newland/sri/ccp/publicmodule/sshinter/3.0.0-SNAPSHOT/sshinter-3.0.0-20180104.011858-2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

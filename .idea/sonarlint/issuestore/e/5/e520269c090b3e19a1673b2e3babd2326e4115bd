@@ -1,0 +1,40 @@
+
+t
+java:S2293&"YReplace the type specification in this constructor call with the diamond operator ("<>").(’‹š¿ûÿÿÿÿ
+l
+java:S3981»"PThe size of "igniteNodes" is always ">=0", so update this test to use isEmpty().(Ç’‚Ïøÿÿÿÿ
+W	java:S125â"<This block of commented-out lines of code should be removed.(°ü‰¸øÿÿÿÿ
+W	java:S125Ğ"<This block of commented-out lines of code should be removed.(°º­Ğşÿÿÿÿ
+T
+java:S2589"8Remove this expression which always evaluates to "false"(Î¬îßúÿÿÿÿ
+a	java:S112À"FDefine and throw a dedicated exception instead of using a generic one.(€ÕÚüÿÿÿÿ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ãÌ“Àûÿÿÿÿ
+u
+java:S2293÷"YReplace the type specification in this constructor call with the diamond operator ("<>").(½¹óùÿÿÿÿ
+^
+java:S1192"GDefine a constant instead of duplicating this literal "status" 4 times.(íõª‡
+R	java:S125ï"<This block of commented-out lines of code should be removed.(—ØòÛ
+\	java:S112±"FDefine and throw a dedicated exception instead of using a generic one.(©Åşê
+O
+java:S2589Ú"8Remove this expression which always evaluates to "false"(úÂÿö
+=
+java:S1075Ä"&Remove this hard-coded path-delimiter.(—è«¤
+a	java:S112´"FDefine and throw a dedicated exception instead of using a generic one.(Ãúø¥üÿÿÿÿ
+t
+java:S2293V"YReplace the type specification in this constructor call with the diamond operator ("<>").(˜€óÅøÿÿÿÿ
+Z
+java:S1155">Use isEmpty() to check whether the collection is empty or not.(Î¬îßúÿÿÿÿ
+V	java:S125'"<This block of commented-out lines of code should be removed.(ø˜®áùÿÿÿÿ
+V	java:S125B"<This block of commented-out lines of code should be removed.(ëºÏ¢ÿÿÿÿÿ
+t
+java:S2293W"YReplace the type specification in this constructor call with the diamond operator ("<>").(Ûø“çıÿÿÿÿ
+K
+java:S3740Ä"/Provide the parametrized type for this generic.(¤©Ì‚üÿÿÿÿ
+N
+java:S2589³"8Remove this expression which always evaluates to "false"(†ïÃ?
+`	java:S1127"FDefine and throw a dedicated exception instead of using a generic one.(ûù ˆúÿÿÿÿ
+T
+java:S1155å">Use isEmpty() to check whether the collection is empty or not.(Ê¢Î
+t
+java:S2293X"YReplace the type specification in this constructor call with the diamond operator ("<>").( ˆ”üÿÿÿÿ
+\	java:S112Ù"FDefine and throw a dedicated exception instead of using a generic one.(ĞÆíØ

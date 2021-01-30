@@ -1,0 +1,56 @@
+
+t
+java:S3776 "RRefactor this method to reduce its Cognitive Complexity from 23 to the 15 allowed.(æ¤¬·øÿÿÿÿ8İÕ¥”ô.
+G
+java:S1481´"*Remove this unused "exec1" local variable.(òØ‰>8İÕ¥”ô.
+
+java:S1149%"_Replace the synchronized class "StringBuffer" by an unsynchronized one such as "StringBuilder".(óïÁÛşÿÿÿÿ8İÕ¥”ô.
+^	java:S125á"<This block of commented-out lines of code should be removed.(¡ğøÿÿÿÿÿ8İÕ¥”ô.
+^	java:S125ş"<This block of commented-out lines of code should be removed.(áåœşüÿÿÿÿ8İÕ¥”ô.
+”
+java:S1130›"vRemove the declaration of thrown exception 'com.jcraft.jsch.JSchException', as it cannot be thrown from method's body.(¿£å8İÕ¥”ô.
+X	java:S125t"<This block of commented-out lines of code should be removed.(¯·Ä±8İÕ¥”ô.
+F
+java:S1481'"*Remove this unused "exec1" local variable.(òØ‰>8İÕ¥”ô.
+]	java:S125J"<This block of commented-out lines of code should be removed.(§éóúÿÿÿÿ8İÕ¥”ô.
+T	java:S106ñ"9Replace this use of System.out or System.err by a logger.(¡šàšúÿÿÿÿ
+[	java:S106¦"9Replace this use of System.out or System.err by a logger.(œ‚Äæşÿÿÿÿ8İÕ¥”ô.
+z	java:S135K"YReduce the total number of break and continue statements in this loop to use at most one.(˜ïˆÿÿÿÿÿ8İÕ¥”ô.
+K	java:S108ø")Either remove or fill this block of code.(¬Àáªøÿÿÿÿ8İÕ¥”ô.
+[	java:S106ˆ"9Replace this use of System.out or System.err by a logger.(œ‚Äæşÿÿÿÿ8İÕ¥”ô.
+©
+java:S2681Q"†This line will not be executed conditionally; only the first line of this 2-line block will be. The rest will execute unconditionally.(™”Íÿÿÿÿÿ8İÕ¥”ô.
+E
+java:S1481¤"'Remove this unused "in" local variable.(ÒöÂ8İÕ¥”ô.
+Y	java:S125ö"<This block of commented-out lines of code should be removed.(¯·Ä±8İÕ¥”ô.
+J	java:S108v")Either remove or fill this block of code.(¬Àáªøÿÿÿÿ8İÕ¥”ô.
+‚
+java:S1149²"_Replace the synchronized class "StringBuffer" by an unsynchronized one such as "StringBuilder".(óïÁÛşÿÿÿÿ8İÕ¥”ô.
+n
+java:S1192'"RDefine a constant instead of duplicating this literal "./DeployAgentExt " 8 times.(òØ‰>8İÕ¥”ô.
+F
+java:S1481Ü"(Remove this unused "tmp" local variable.(Ÿª‚µ8İÕ¥”ô.
+U
+java:S1118":Add a private constructor to hide the implicit public one.(İÍÓİşÿÿÿÿ
+U
+java:S1854Ü"7Remove this useless assignment to local variable "tmp".(Ÿª‚µ8İÕ¥”ô.
+T
+java:S1854¤"6Remove this useless assignment to local variable "in".(ÒöÂ8İÕ¥”ô.
+V
+java:S1854´"9Remove this useless assignment to local variable "exec1".(òØ‰>8İÕ¥”ô.
+B
+java:S1068",Remove this unused "ENCODING" private field.(¯¢ù¾
+\
+java:S1128"FRemove this unused import 'com.newland.boss.life.LifeCycleController'.(¨²µá
+[	java:S106ò"9Replace this use of System.out or System.err by a logger.(‡¾ú»øÿÿÿÿ8İÕ¥”ô.
+V	java:S106ÿ"9Replace this use of System.out or System.err by a logger.(Ñõ¬–8İÕ¥”ô.
+‚
+java:S1149Œ"_Replace the synchronized class "StringBuffer" by an unsynchronized one such as "StringBuilder".(¨âàøÿÿÿÿ8İÕ¥”ô.
+I
+java:S1481±"+Remove this unused "result" local variable.(ìş“8İÕ¥”ô.
+U
+java:S1854'"9Remove this useless assignment to local variable "exec1".(òØ‰>8İÕ¥”ô.
+g
+java:S3008"QRename this field "LOGGER" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÅÎ×
+]	java:S125|"<This block of commented-out lines of code should be removed.(áåœşüÿÿÿÿ8İÕ¥”ô.
+]	java:S125R"<This block of commented-out lines of code should be removed.(í†“ûøÿÿÿÿ8İÕ¥”ô.

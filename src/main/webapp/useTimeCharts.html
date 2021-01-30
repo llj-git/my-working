@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html ng-app="useTimeChart">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>折线图</title>
+<!--[if gte IE 9]><!-->
+<script src="resources/skeleton/js/angular.min-1.6.5.js"></script>
+<!--<![endif]-->
+<!--[if lt IE 9]>
+<script src="resources/skeleton/js/modernizr.js "></script>
+<script src="resources/skeleton/js/amazeui.ie8polyfill.min.js"></script>
+<script src="resources/skeleton/js/jquery-1.11.3.min.js"></script>
+<script src="resources/skeleton/js/angular.min-1.2.32.js"></script>
+<style>
+
+
+</style>
+<![endif]-->
+<script src="resources/skeleton/js/jquery-3.3.1.min.js"></script>
+<script src="resources/includeCss_3rd.js"></script>
+<script src="resources/skeleton/js/angular.min-1.6.5.js"></script>
+<script src="resources/skeleton/js/My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript"
+	src="resources/skeleton/js/echarts.min.js"></script>
+<script type="text/javascript"
+	src="resources/skeleton/js/amazeui.min.js"></script>
+<style type="text/css">
+.lineGraph {
+	height: 500px;
+}
+</style>
+</head>
+<body ng-controller="useTimeChartController">
+	<div style="width: 100%;">
+		<div
+			style="font-size: 18px; padding-top: 10px; padding-bottom: 10px; background: #F0F0F0;">
+			<div style="float: left; padding-left: 15px;">
+				<span>应用实例 :</span>   <select ng-model="data.appInstanceName"
+					class="cursor: pointer"
+					ng-change="appSelectChange(data.appInstanceName)">
+					<option value="" selected="selected">请选择</option>
+					<option ng-repeat="app in appList" value="{{app}}">{{app}}</option>
+				</select>
+			</div>
+
+			<div style="float: left; padding-left: 15px; margin-left: 15px;">
+				<span>时间 :</span> <input type="text"
+					onfocus="WdatePicker({dateFmt:'yyyy-MM-dd', maxDate:'#F{$dp.$D(\'endDate\')||\'3000-01-01\'}'})"
+					id="beginDate" class="input-text Wdate"
+					style="width: 150px; cursor: pointer;" ng-model="data.beginDate"
+					onChange=""> - <input type="text"
+					onfocus="WdatePicker({dateFmt:'yyyy-MM-dd', minDate:'#F{$dp.$D(\'beginDate\')}',maxDate:'3000-01-01'})"
+					id="endDate" class="input-text Wdate"
+					style="width: 150px; cursor: pointer;" ng-model="data.endDate"
+					onChange="">
+			</div>
+
+			<div style="text-align: right; margin-right: 20px;">
+				<span><button class="btn btn-primary btn-sm"
+						ng-click="queryBtn()">查询</button></span> <span><button
+						class="btn btn-primary btn-sm" ng-click="resetBtn()">重置</button></span>
+			</div>
+
+			<div
+				style="float: left; padding: 15px; background: #F0F0F0; width: 100%;">
+				<span>主机 :</span>
+				<button type="button" class="btn btn-primary btn-sm"
+					style="margin-left: 25px;" data-am-modal="{target: '#my-popup'}">点击选择</button>
+				<span style="margin-left: 30px;">文件 :</span>
+				<button type="button" class="btn btn-primary btn-sm"
+					style="margin-left: 20px;" data-am-modal="{target: '#file-popup'}">点击选择</button>
+			</div>
+		</div>
+	</div>
+
+	<div id="lineGraph" class="lineGraph" style="margin-top: 30px;"></div>
+
+	<div class="am-popup" id="my-popup" style="width: 60%; height: 80%">
+		<div class="am-popup-inner">
+			<div class="am-popup-hd">
+				<h5 class="am-popup-title">请选择主机</h5>
+				<span data-am-modal-close="" class="am-close">×</span>
+			</div>
+			<div class="am-popup-bd" style="background-color: #fff;" id="hostck">
+				<div style="margin-left: 30px; margin-top: 15px;">
+					<input name="allHost" type="checkbox" value="-1" /><span>全选</span>
+				</div>
+				<div ng-repeat="hostName in hostNameList"
+					style="margin-left: 30px; margin-top: 15px;">
+					<input name="host" type="checkbox" value="{{hostName}}" /><span>{{hostName}}</span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="am-popup" id="file-popup" style="width: 60%; height: 80%;">
+		<div class="am-popup-inner">
+			<div class="am-popup-hd">
+				<span class="am-popup-title">请选择文件</span>
+				<span data-am-modal-close="" class="am-close">×</span>
+			</div>
+			<div class="am-popup-bd" style="background-color: #fff;" id="fileck">
+				<div style="margin-left: 10px;">
+					<input name="allFile" type="checkbox" /><span>全选</span>
+				</div>
+				<div ng-repeat="list in dataList"
+					style="margin-left: 10px; margin-top: 5px;">
+					<input name="file" type="checkbox" value="{{list.metrics}}" /><span>{{list.metricsName}}</span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="am-modal am-modal-alert" tabindex="-1" id="my-modal">
+		<div class="am-modal-dialog" style="border-radius: 18px;">
+			<div class="am-modal-hd"
+				style="background-color: #FF5151; color: #FFFFFF; border-top-left-radius: 16px; border-top-right-radius: 16px;">{{alertTitle}}</div>
+			<div class="am-modal-bd"
+				style="background-color: #FFFFFF; min-height: 100px; padding-top: 35px; font-size: 105%;">{{alertInfo}}</div>
+			<div class="am-modal-footer"
+				style="border-bottom-left-radius: 16px; border-bottom-right-radius: 16px;">
+				<span class="am-modal-btn">确定</span>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript"
+		src="resources/biz/controller/useTimeCharts.js"></script>
+</body>
+</html>

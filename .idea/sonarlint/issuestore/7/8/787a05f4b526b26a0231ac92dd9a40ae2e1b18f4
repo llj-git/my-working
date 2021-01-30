@@ -1,0 +1,35 @@
+
+U
+java:S1118":Add a private constructor to hide the implicit public one.(é€«´ùÿÿÿÿ
+D
+java:S3740!"/Provide the parametrized type for this generic.(ŸÏƒq
+J
+java:S3740""/Provide the parametrized type for this generic.(ŠùŸêûÿÿÿÿ
+8
+java:S2386""Make this member "protected".(ŠùŸêûÿÿÿÿ
+2
+java:S2386!"Make this member "protected".(ŸÏƒq
+Y
+java:S1444!"DMake this "public static appDeployMutualAidRelationList" field final(ŸÏƒq
+
+java:S1104!"jMake appDeployMutualAidRelationList a static final constant or non-public and provide accessors if needed.(ŸÏƒq
+„
+java:S1130‚"nRemove the declaration of thrown exception 'java.sql.SQLException', as it cannot be thrown from method's body.(ŞÜ–
+O
+java:S1444 "9Make this "public static appDeployEntityList" field final(üÙá
+E
+java:S3740 "/Provide the parametrized type for this generic.(üÙá
+
+java:S1104""dMake checkWaitingDurationList a static final constant or non-public and provide accessors if needed.(ŠùŸêûÿÿÿÿ
+O
+java:S1444#"4Make this "public static sessionTimeOut" field final(ßèËŒÿÿÿÿÿ
+u
+java:S1104#"ZMake sessionTimeOut a static final constant or non-public and provide accessors if needed.(ßèËŒÿÿÿÿÿ
+Y
+java:S1444"">Make this "public static checkWaitingDurationList" field final(ŠùŸêûÿÿÿÿ
+u
+java:S1104 "_Make appDeployEntityList a static final constant or non-public and provide accessors if needed.(üÙá
+3
+java:S2386 "Make this member "protected".(üÙá
+‰
+java:S1130x"nRemove the declaration of thrown exception 'java.sql.SQLException', as it cannot be thrown from method's body.(Í™ï¸ıÿÿÿÿ

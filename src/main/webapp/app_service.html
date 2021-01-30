@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html ng-app="servicesView">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<script type="text/javascript"
+	src="resources/skeleton/js/jquery-1.11.3.min.js"></script>
+
+<link rel="stylesheet" type="text/css"
+	href="resources/skeleton/css/amazeui.min.css" />
+<!--[if gte IE 9]><!-->
+<script src="resources/skeleton/js/angular.min-1.6.5.js"></script>
+<!--<![endif]-->
+<!--[if lt IE 9]>
+<script src="resources/skeleton/js/modernizr.js "></script>
+<script src="resources/skeleton/js/amazeui.ie8polyfill.min.js"></script>
+<script src="resources/skeleton/js/angular.min-1.2.32.js"></script>
+<![endif]-->	
+<script type="text/javascript"
+	src="resources/skeleton/js/amazeui.min.js"></script>
+<style>
+.container {
+	width: 100%;
+	height: auto;
+}
+
+a {
+	color: #FFFFFF;
+}
+
+a:hover {
+	color: black;
+}
+
+th {
+	background-color: #3F7CE7;
+	color: #FFFFFF;
+}
+
+td {
+	word-break: break-all;
+	word-wrap: break-word;
+}
+</style>
+<!--[if lt IE 9]>
+<style>
+body{
+	font-size:16px;
+}
+</style>
+<![endif]-->
+</head>
+<body ng-controller="servicesController"
+	style="background-color: #ECECFF;" class="js-modal-open">
+	<div class="am-tabs am-margin" data-am-tabs id="services_app"style="background-color: #FFFFFF;">
+		<ul class="am-tabs-nav am-nav am-nav-tabs"
+			style="background: #0E90D2; height: 50px; padding: 0px;">
+		 	<li class="am-active" style="padding-left: 10px; padding-top: 10px;"><a href="#">app</a></li>		
+ 			<li ng-repeat="serviceType in serviceTypeList" style="padding-top: 10px;"><a href="#"
+				ng-click="serviceNodes(serviceType)">{{serviceType}}</a></li>
+		</ul>
+		<div class="am-tabs-bd">
+			<div class="am-tab-panel am-active"></div>
+ 			<div class="am-tab-panel">
+ 				<div id="changeSel" style="padding:15px 15px 15px 5px;background:#F0F0F0;font-size: 15px;">
+				ServiceName:
+					<select class="selectpicker show-tick" style="padding-top: 5px;padding-bottom: 5px;">
+					  <option value="0">请选择</option>
+	                  <option ng-repeat="service in serviceChildNodes" value="{{service}}">{{service}}</option>
+	            	</select>
+					<button class="btn btn-primary btn-sm" type="button"
+					ng-click="serviceDes()">查询</button>
+				</div>
+				
+				<div ng-if="serviceType=='bds' || serviceType=='csn'" ng-include="'services_info.html'" align="center"></div>
+				<div ng-if="serviceType=='ignite'" ng-include="'ignite_services_info.html'" align="center"></div>
+			</div>
+		</div>
+	</div>
+	<div class="am-modal am-modal-alert" tabindex="-1" id="my-modal">
+		<div class="am-modal-dialog" style="border-radius: 18px;">
+			<div class="am-modal-hd"
+				style="background-color: #FF5151; color: #FFFFFF; border-top-left-radius: 16px; border-top-right-radius: 16px;">警告</div>
+			<div class="am-modal-bd"
+				style="background-color: #FFFFFF; min-height: 100px;padding-top: 35px;font-size:105%;">{{alertInfo}}</div>
+			<div class="am-modal-footer">
+				<span class="am-modal-btn">确定</span>
+			</div>
+		</div>
+	</div>
+	<script
+		src="resources/biz/controller/bossCloudServicesViewController.js"></script>
+</body>
+</html>

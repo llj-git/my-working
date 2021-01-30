@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html ng-app="dbDmlQueryView">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript"
+	src="resources/skeleton/js/jquery-1.11.3.min.js"></script>
+<!--[if gte IE 9]><!-->
+<script src="resources/skeleton/js/angular.min-1.6.5.js"></script>
+<!--<![endif]-->
+<!--[if lt IE 9]>
+<script src="resources/skeleton/js/modernizr.js "></script>
+<script src="resources/skeleton/js/amazeui.ie8polyfill.min.js"></script>
+<script src="resources/skeleton/js/angular.min-1.2.32.js"></script>
+<![endif]-->
+<script type="text/javascript"
+	src="resources/skeleton/js/amazeui.min.js"></script>
+<script type="text/javascript"
+	src="resources/skeleton/plugins/ngtable/js/ng-table.min.js"></script>
+<script type="text/javascript"
+	src="resources/skeleton/plugins/layer/1.9.3/layer.js"></script>
+<script src="resources/includeCss_3rd.js"></script>
+
+<style>
+* {
+	padding: 0;
+	margin: 0;
+}
+
+.queryArea {
+	margin: 5px 10px;
+}
+
+.tableArea {
+	margin: 0px 0px 0px 0px;
+}
+
+.comments {
+	width: 100%; /*自动适应父布局宽度*/
+	margin: 3px 0px;
+	overflow: auto;
+	word-break: break-all;
+	/*在ie中解决断行问题(防止自动变为在一行显示，主要解决ie兼容问题，ie8中当设宽度为100%时，文本域类容超过一行时，
+当我们双击文本内容就会自动变为一行显示，所以只能用ie的专有断行属性“word-break或word-wrap”控制其断行)*/
+}
+
+/* .container {
+	width: 100%;
+	height: auto;
+}
+
+a {
+	color: #FFFFFF;
+}
+
+a:hover {
+	color: black;
+}
+
+th {
+	background-color: #0099FF;
+	color: #FFFFFF;
+}
+
+td {
+	word-break: break-all;
+	word-wrap: break-word;
+}
+
+.search:before {
+	content: "\f002";
+	margin-top: 30px;
+	margin-left: 10px;
+	color: blue;
+}
+
+.stop {
+	color: red;
+}
+
+.running {
+	color: green;
+}
+
+.normal {
+	color: orange;
+} */
+</style>
+<!--[if lt IE 9]>
+<style>
+body{
+	font-size:16px;
+}
+</style>
+<![endif]-->
+</head>
+<body ng-controller="dbDmlQueryCtlr as dml" ng-cloak>
+	<div style="background:#F0F0F0;">
+		<div class="queryArea am-form-group">
+			<textarea class="comments" rows="5" ng-model="sql"></textarea>
+		</div>
+	</div>
+	<div style="margin: 5px;text-align: center;">
+		<button class="btn btn-primary btn-sm" type="button"
+			ng-click="queryFun()">查询</button>
+		<button class="btn btn-primary btn-sm" type="button"
+			ng-click="resetFun()">重置</button>
+	</div>
+		
+
+	<div class="am-tabs am-margin tableArea">
+		<table ng-table="dml.tableParams"
+			class="table table-condensed table-bordered table-striped" >
+			<tr>
+				<th ng-repeat="(column,columnValue) in columnLists" style="background: #3F7CE7;color:#FFF;font-size:12px">{{
+					column }}</th>
+			</tr>
+			<tr ng-repeat="data in $data">
+				<td ng-repeat="columnValue in data" style="text-align: center">{{
+					columnValue }}</td>
+			</tr>
+		</table>
+	</div>
+
+	<script src="resources/biz/controller/dbDmlQueryController.js"></script>
+</body>
+</html>

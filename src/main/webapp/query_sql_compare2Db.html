@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html ng-app="querySql2DBView">
+<head>
+<meta charset="utf-8"> 
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css"
+	href="resources/skeleton/css/bootstrap.min.css" />
+<script type="text/javascript"
+	src="resources/skeleton/js/jquery-1.11.3.min.js"></script>
+<!--[if gte IE 9]><!-->
+<script src="resources/skeleton/js/angular.min-1.6.5.js"></script>
+<!--<![endif]-->
+<!--[if lt IE 9]>
+<script src="resources/skeleton/js/modernizr.js "></script>
+<script src="resources/skeleton/js/amazeui.ie8polyfill.min.js"></script>
+<script src="resources/skeleton/js/angular.min-1.2.32.js"></script>
+<script src="resources/skeleton/js/jquery.placeholder.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	$('input, textarea').placeholder({customClass:'my-placeholder'});
+
+});
+</script>
+<![endif]-->
+<script type="text/javascript"
+	src="resources/skeleton/js/amazeui.min.js"></script>
+<script type="text/javascript"
+	src="resources/skeleton/plugins/ngtable/js/ng-table.min.js"></script>
+<script type="text/javascript"
+	src="resources/skeleton/plugins/layer/1.9.3/layer.js"></script>
+<script src="resources/includeCss_3rd.js"></script>
+
+<style>
+* {
+	padding: 0;
+	margin: 0;
+}
+
+.queryArea {
+	margin: 5px 10px;
+}
+
+.tableArea {
+	margin: 0px 0px 0px 0px;
+}
+
+.comments {
+	width: 100%; /*自动适应父布局宽度*/
+	margin: 3px 0px;
+	overflow: auto;
+	word-break: break-all;
+	/*在ie中解决断行问题(防止自动变为在一行显示，主要解决ie兼容问题，ie8中当设宽度为100%时，文本域类容超过一行时，
+当我们双击文本内容就会自动变为一行显示，所以只能用ie的专有断行属性“word-break或word-wrap”控制其断行)*/
+}
+/* .container {
+	width: 100%;
+	height: auto;
+}
+
+a {
+	color: #FFFFFF;
+}
+
+a:hover {
+	color: black;
+}
+
+th {
+	background-color: #0099FF;
+	color: #FFFFFF;
+}
+
+td {
+	word-break: break-all;
+	word-wrap: break-word;
+}
+
+.search:before {
+	content: "\f002";
+	margin-top: 30px;
+	margin-left: 10px;
+	color: blue;
+}
+
+.stop {
+	color: red;
+}
+
+.running {
+	color: green;
+}
+
+.normal {
+	color: orange;
+} */
+</style>
+<!--[if lt IE 9]>
+<style>
+body{
+	font-size:16px;
+}
+</style>
+<![endif]-->
+</head>
+<body ng-controller="altiBaseQueryController as dml" ng-cloak style="width: 98%;height:100%;">
+	<div style="padding-top:12px; padding-bottom: 12px;background:#F0F0F0;padding-right:12px">
+		<div style="font-size: 18px; margin-left: 10px;text-align:left;float:left;">表名:
+		 	<select id="changeSel" class="selectpicker show-tick">
+				  <option value="0">请选择表</option>
+                  <option ng-repeat="x in selectList" value="{{x.tableId}}">{{x.tableName}}</option>
+            </select>
+		</div>
+		<span style="font-size: 18px;float:left;margin-left: 20px;" id="keyId">主键ID:</span>
+		<div style="float:left;margin-left: 5px;">
+			<input type="text" placeholder="请输入对应的id" class="input-text ng-pristine" id="userInput">
+		</div>
+		<div
+			style="font-size: 18px; margin-left: 10px; text-align: left; float: left;">
+			<select id="conditionSel" class="selectpicker show-tick">
+				<option value="0">备选条件(可为空)</option>    
+				<option ng-repeat="con in conditionList" value="{{con}}">{{con}}</option>
+			</select> 
+			<input type="text" placeholder="请输入对应字段的条件" style="width:150px;"
+				class="input-text ng-pristine" id="condition">
+		</div>
+		
+		<div style="text-align: right;margin-right: 20px;">
+				<button class="btn btn-primary btn-sm" type="button"
+					ng-click="queryFun()" id="querybtn">查询</button>
+				<button class="btn btn-primary btn-sm" type="button"
+					ng-click="resetFun()">重置</button>
+		</div>
+	</div>
+	
+	<div style="text-align: center;height:30px;font-size: 15px;">altibase</div>
+	<div class="am-tabs am-margin tableArea">
+		<table ng-table="dml" id="dataTable"
+			class="table table-condensed table-bordered table-striped am-table-hover">
+			<tr>
+ 				<th style="background: #3F7CE7;color:#FFF;">序号</th>				
+				<th ng-repeat="(column,columnValue) in columnLists" ng-if="column!='ROWID' && column!='PK_SEQ'"" style="background: #3F7CE7;color:#FFF;">
+					{{column}}
+				</th>
+			</tr>
+			<tr ng-repeat="alti in altibaseValue">
+				<th id="rowId" value="">{{$index+1}}</th>	
+				<td ng-repeat="(keys,altiValue) in alti" ng-if="keys!='PK_SEQ'" style="text-align: center">
+					{{altiValue}}
+				</td>
+			</tr>
+		</table>
+	</div>
+	
+	<div style="text-align: center;height:30px;font-size: 15px;">oracle</div>
+	<div class="am-tabs am-margin tableArea">
+		<table ng-table="dml" id="dataTable"
+			class="table table-condensed table-bordered table-striped am-table-hover">
+			<tr>
+ 				<th style="background: #3F7CE7;color:#FFF;">序号</th>				
+				<th ng-repeat="(column,columnValue) in columnLists" ng-if="column!='ROWID' && column!='PK_SEQ'" style="background: #3F7CE7;color:#FFF;">
+					{{column}}
+				</th>
+			</tr>
+			<tr ng-repeat="data in oracleValue">
+				<th id="rowId" value="">{{$index+1}}</th>	
+				<td ng-repeat="(key,columnValue) in data" ng-if="key!='ROWID'" style="text-align: center">
+					{{columnValue}}
+				</td>
+			</tr>
+		</table>
+	</div>
+	
+	<div class="am-modal am-modal-alert" tabindex="-1" id="my-modal">
+		<div class="am-modal-dialog" style="border-radius: 18px;">
+			<div class="am-modal-hd"
+				style="background-color: #FF5151; color: #FFFFFF; border-top-left-radius: 16px; border-top-right-radius: 16px;">{{alertTitle}}</div>
+			<div class="am-modal-bd"
+				style="background-color: #FFFFFF; min-height: 100px; padding-top: 35px; font-size: 105%;">{{alertInfo}}</div>
+			<div class="am-modal-footer"
+				style="border-bottom-left-radius: 16px; border-bottom-right-radius: 16px;">
+				<span class="am-modal-btn">确定</span>
+			</div>
+		</div>
+	</div>
+
+
+	<script src="resources/biz/controller/query_sql2DbController.js"></script>
+</body>
+</html>

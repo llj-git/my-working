@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.newland.sri.ccp.rtc.rtccommon:loadbalance:3.0.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/newland/sri/ccp/rtc/rtccommon/loadbalance/3.0.0-SNAPSHOT/loadbalance-3.0.0-20170115.064046-21.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/newland/sri/ccp/rtc/rtccommon/loadbalance/3.0.0-SNAPSHOT/loadbalance-3.0.0-20170115.064046-21-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/newland/sri/ccp/rtc/rtccommon/loadbalance/3.0.0-SNAPSHOT/loadbalance-3.0.0-20170115.064046-21-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

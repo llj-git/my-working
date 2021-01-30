@@ -1,0 +1,496 @@
+<html ng-app="zkManage">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--[if lt IE 9]>
+    <script src="resources/skeleton/js/modernizr.js "></script>
+    <script src="resources/skeleton/js/amazeui.ie8polyfill.min.js"></script>
+    <script src="resources/skeleton/js/angular.min-1.2.32.js"></script>
+    <![endif]-->
+    <!--[if gte IE 9]><!-->
+    <script src="resources/skeleton/js/angular.min-1.6.5.js"></script>
+    <!--<![endif]-->
+    <script type="text/javascript"
+            src="resources/skeleton/js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript"
+            src="resources/skeleton/js/amazeui.min.js"></script>
+    <script type="text/javascript"
+            src="resources/skeleton/js/ng-csv.min.js"></script>
+    <script type="text/javascript"
+            src="resources/skeleton/js/angular-sanitize.min.js"></script>
+    <link rel="stylesheet" type="text/css"
+          href="resources/skeleton/css/amazeui.min.css"/>
+    <link rel="stylesheet" type="text/css"
+          href="resources/skeleton/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css"
+          href="resources/skeleton/zTree/css/zTreeStyle/zTreeStyle.css"/>
+    <script type="text/javascript"
+            src="resources/skeleton/zTree/js/jquery.ztree.all.min.js"></script>
+    <script type="text/javascript"
+            src="resources/skeleton/zTree/js/jquery.ztree.core.min.js"></script>
+    <script type="text/javascript"
+            src="resources/skeleton/zTree/js/jquery.ztree.exhide.min.js"></script>
+    <script type="text/javascript"
+            src="resources/skeleton/zTree/js/jquery.ztree.exedit.min.js"></script>
+
+    <link rel="stylesheet" type="text/css"
+          href="resources/skeleton/css/bootstrap.min.css"/>
+    <script type="text/javascript"
+            src="resources/skeleton/js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript"
+            src="resources/skeleton/plugins/ngtable/js/ng-table.min.js"></script>
+    <script type="text/javascript"
+            src="resources/skeleton/plugins/layer/1.9.3/layer.js"></script>
+    <script src="resources/includeCss_3rd.js"></script>
+    <script src="resources/biz/controller/cacheConfigInfo.js"></script>
+    <style>
+        div, body, html {
+            margin: 0;
+            padding: 0;
+        }
+
+        #left, #right, #middle {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            margin: 0;
+            padding: 0;
+        }
+
+        #left {
+            width: 200px;
+            background: #3F7CE7FFF;
+        }
+
+        #middle {
+            width: 5px;
+            background: #3F7CE7FFF;
+            left: 200px;
+        }
+
+        #middle:hover {
+            cursor: w-resize;
+        }
+
+        #right {
+            right: 0;
+            background: #3F7CE7FFF;
+            left: 205px;
+            width: auto;
+        }
+
+        #pk {
+            width: 100%;
+            float: left;
+        }
+
+        #index {
+            width: 50%;
+            padding: 18px;
+            float: left;
+        }
+
+        .title {
+            font-weight: bold;
+        }
+
+        .headborder {
+            border: 1px solid #ddd;
+            border-right-width: 0.5px;
+            padding-top: 8.4px;
+            padding-bottom: 8.4px;
+        }
+
+        .list {
+            width: 25%;
+            float: left;
+            padding: 8.4px;
+            border: 1px solid #ddd;
+            /*合并边框*/
+            border-collapse: collapse;
+        }
+
+        #index .indexselect {
+            height: 33px;
+            width: 180px;
+        }
+
+        #index .indexvalue {
+            height: 33px;
+            width: 118px;
+        }
+
+        .scroll_table_ot {
+            margin: 0px 0px 205px 20px;
+            line-height: 18px;
+            width: 850px;
+            font-size: 14px;
+        }
+
+        .scroll_table_ot .scroll {
+            max-height: 500px;
+            border: 1px solid #6a6a6a;
+            border-top: 0;
+            overflow-y: auto;
+            border-right: 0;
+        }
+
+        .scroll_table_ot table {
+            width: 100%;
+            table-layout: fixed;
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        #td1 {
+            width: 250px;
+            padding: 10px;
+            border: 1px solid #6a6a6a;
+        }
+
+        #td2 {
+            width: 600px;
+            padding: 10px;
+            border: 1px solid #6a6a6a;
+        }
+
+        #th1 {
+            font-weight: bold;
+            width: 250px;
+            padding: 10px;
+            border: 1px solid #6a6a6a;
+        }
+
+        #th2 {
+            font-weight: bold;
+            width: 600px;
+            padding: 10px;
+            border: 1px solid #6a6a6a;
+        }
+
+        .scroll_table_ot thead th:last-child, .scroll_table_ot tbody td:last-child {
+            width: auto;
+        }
+
+        .scroll_table_ot tbody tr:first-child td {
+            border-top: 0;
+        }
+
+        .scroll_table_ot tbody tr:last-child td {
+            border-bottom: 0;
+        }
+
+        .scroll_table_ot tbody tr td:first-child {
+            border-left: 0;
+        }
+
+        .scroll_table_ot tbody tr td:last-child {
+            border-right: 0;
+        }
+
+        tr td {
+            width: 10%;
+            height: 50px;
+            text-align: center;
+        }
+    </style>
+
+
+</head>
+<body ng-controller="zkManageController as dm1">
+<div id="zk_app">
+    <div id="left" class="am-panel am-panel-default">
+        <div class="am-panel-hd">缓存列表</div>
+        <div
+                style="height: 3050px; width: 100%; position: absolute; overflow: scroll;">
+            <p>
+                <input type="text" ng-model="test" placeholder="请在这里Cachename">
+            </p>
+            <ul id="treeDemo" class="ztree" ng-model="selectNode" value="1"
+                style="height: 3050px; width: 100%; position: absolute; border: 0px; padding-top: 10px; margin: 0;">
+                <li ng-repeat="x in cacheNames | filter:test | orderBy:x"
+                    ng-click="getCachecfg(x)"></b></font>{{ x }}
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="right" class="am-panel am-panel-default">
+
+
+        <table class="table table-condensed table-bordered table-striped am-table-hover " ng-repeat="item in data">
+            <tr>
+                <td style="text-align:left;background:#0099FF;"><font size="3"><b>字段</b></font></td>
+                <td style="background:#0099FF;"><font size="3"><b>值</b></font></td>
+            </tr>
+            <tr>
+                <td style="text-align:left;"><font size="3"><b>name：</b></font></td>
+                <td>{{item.name}}</td>
+            </tr>
+            <tr>
+                <td style="text-align:left;"><font size="3"><b>grpName：</b></font></td>
+                <td>{{item.grpName}}</td>
+            </tr>
+            <tr>
+                <td style="text-align:left;"><font size="3"><b>memPlcName：</b></font></td>
+                <td>{{item.memPlcName}}</td>
+            </tr>
+            <tr>
+                <td style="text-align:left;"><font size="3"><b>rebalanceTimeout：</b></font></td>
+                <td>{{item.rebalanceTimeout}}</td>
+            </tr>
+            <tr>
+                <td style="text-align:left;"><font size="3"><b>storeConcurrentLoadAllThreshold：</b></font></td>
+                <td>{{item.storeConcurrentLoadAllThreshold}}</td>
+            </tr>
+            <tr>
+                <td style="text-align:left;"><font size="3"><b>rebalancePoolSize：</b></font></td>
+                <td>{{item.rebalancePoolSize}}</td>
+            </tr>
+            <tr>
+                <td style="text-align:left;"><font size="3"><b>evictPlc：</b></font></td>
+                <td>{{item.evictPlc}}</td>
+            </tr>
+            <tr>
+                <td style="text-align:left;"><font size="3"><b>evictPlcFactory：</b></font></td>
+                <td>{{item.evictPlcFactory}}</td>
+
+            </tr>
+            <tr>
+                <td style="text-align:left;"><font size="3"><b>onheapCache：</b></font></td>
+                <td>{{item.onheapCache}}</td>
+            </tr>
+            <tr>
+                <td style="text-align:left;"><font size="3"><b>evictFilter：</b></font></td>
+                <td>{{item.evictFilter}}</td>
+            </tr>
+            <tr>
+                <td style="text-align:left;"><font size="3"><b>sqlOnheapCache：</b></font></td>
+                <td>{{item.sqlOnheapCache}}</td>
+            </tr>
+            <tr>
+                <td style="text-align:left;"><font size="3"><b>sqlOnheapCacheMaxSize：</b></font></td>
+                <td>{{item.sqlOnheapCacheMaxSize}}</td>
+            </tr>
+            <tr>
+                <td style="text-align:left;"><font size="3"><b>eagerTtl：</b></font></td>
+                <td>{{item.eagerTtl}}</td>
+            </tr>
+            <tr>
+                <td style="text-align:left;"><font size="3"><b>dfltLockTimeout：</b></font></td>
+                <td>{{item.dfltLockTimeout}}</td>
+
+
+            </tr>
+            <tr>
+                <td style="text-align:left;"><font size="3"><b>nearCfg：</b></font></td>
+                <td>{{item.nearCfg}}</td>
+            </tr>
+            <tr>
+                <td style="text-align:left;"><font size="3"><b>loadPrevVal：</b></font></td>
+                <td>{{item.loadPrevVal}}</td>
+            </tr>
+            <tr>
+                <td style="text-align:left;"><font size="3"><b>storeFactory：</b></font></td>
+                <td>{{item.storeFactory}}</td>
+            </tr>
+            <tr>
+                <td style="text-align:left;"><font size="3"><b>storeKeepBinary：</b></font></td>
+                <td>{{item.storeKeepBinary}}</td>
+
+            </tr>
+            <tr>
+                <td style="text-align:left;"><font size="3"><b>cacheMode：</b></font></td>
+                <td>{{item.cacheMode}}</td>
+            </tr>
+            <tr>
+                <td style="text-align:left;"><font size="3"><b>atomicityMode：</b></font></td>
+                <td>{{item.atomicityMode}}</td>
+
+            </tr>
+            <tr>
+                <td style="text-align:left;"><font size="3"><b>backups：</b></font></td>
+                <td>{{item.backups}}</td>
+            </tr>
+            <tr>
+                <td style="text-align:left;"><font size="3"><b>rebalanceMode：</b></font></td>
+                <td>{{item.rebalanceMode}}</td>
+            </tr>
+            <tr>
+                <td style="text-align:left;"><font size="3"><b>invalidate：</b></font></td>
+                <td>{{item.invalidate}}</td>
+            </tr>
+            <tr>
+                <td style="text-align:left;"><font size="3"><b>tmLookupClsName：</b></font></td>
+                <td>{{item.tmLookupClsName}}</td>
+
+            </tr>
+
+            <tr>
+                <td style="text-align:left;"><font size="3"><b>rebalanceOrder：</b></font></td>
+                <td>{{item.rebalanceOrder}}</td>
+            </tr>
+            <tr>
+                <td style="text-align:left;"><font size="3"><b>rebalanceBatchSize：</b></font></td>
+                <td>{{item.rebalanceBatchSize}}</td>
+
+            </tr>
+
+            <tr>
+                <td style="text-align:left;"><font size="3"><b>rebalanceBatchesPrefetchCnt：</b></font></td>
+                <td>{{item.rebalanceBatchesPrefetchCnt}}</td>
+            </tr>
+            <tr>
+                <td style="text-align:left;"><font size="3"><b>writeBehindEnabled：</b></font></td>
+                <td>{{item.writeBehindEnabled}}</td>
+            </tr>
+            <tr>
+                <td style="text-align:left;"><font size="3"><b>maxConcurrentAsyncOps：</b></font></td>
+                <td>{{item.maxConcurrentAsyncOps}}</td>
+            </tr>
+            <tr>
+                <td style="text-align:left;"><font size="3"><b>sqlIdxMaxInlineSize：</b></font></td>
+                <td>{{item.sqlIdxMaxInlineSize}}</td>
+            </tr>
+            <tr>
+                <td style="text-align:left;"><font size="3"><b>writeBehindFlushSize：</b></font></td>
+                <td>{{item.writeBehindFlushSize}}</td>
+
+            </tr>
+            <tr>
+                <td style="text-align:left;"><font size="3"><b>writeBehindFlushFreq：</b></font></td>
+                <td>{{item.writeBehindFlushFreq}}</td>
+
+
+            </tr>
+            <td style="text-align:left;"><font size="3"><b>writeBehindFlushThreadCnt：</b></font></td>
+            <td>{{item.writeBehindFlushThreadCnt}}</td>
+            </tr>
+            <tr>
+                <td style="text-align:left;"><font size="3"><b>maxQryIterCnt：</b></font></td>
+                <td>{{item.maxQryIterCnt}}</td>
+            <tr></tr>
+            <tr>
+                <td style="text-align:left;"><font size="3"><b>writeBehindBatchSize：</b></font></td>
+                <td>{{item.writeBehindBatchSize}}</td>
+
+            </tr>
+            <tr>
+                <td style="text-align:left;"><font size="3"><b>writeBehindCoalescing：</b></font></td>
+                <td>{{item.writeBehindCoalescing}}</td>
+
+
+            </tr>
+            <tr>
+                <td style="text-align:left;"><font size="3"><b>maxQryIterCnt：</b></font></td>
+                <td>{{item.maxQryIterCnt}}</td>
+            </tr>
+            <tr>
+                <td style="text-align:left;"><font size="3"><b>rebalanceThrottle：</b></font></td>
+                <td>{{item.rebalanceThrottle}}</td>
+            </tr>
+            <tr>
+                <td style="text-align:left;"><font size="3"><b>affMapper：</b></font></td>
+                <td>{{item.affMapper}}</td>
+            </tr>
+            <tr>
+                <td style="text-align:left;"><font size="3"><b>rebalanceDelay：</b></font></td>
+                <td>{{item.rebalanceDelay}}</td>
+            </tr>
+            <tr>
+                <td style="text-align:left;"><font size="3"><b>interceptor：</b></font></td>
+                <td>{{item.interceptor}}</td>
+            </tr>
+            <tr>
+                <td style="text-align:left;"><font size="3"><b>longQryWarnTimeout：</b></font></td>
+                <td>{{item.longQryWarnTimeout}}</td>
+            </tr>
+            <tr>
+                <td style="text-align:left;"><font size="3"><b>qryDetailMetricsSz：</b></font></td>
+                <td>{{item.qryDetailMetricsSz}}</td>
+            </tr>
+            <tr>
+                <td style="text-align:left;"><font size="3"><b>sqlEscapeAll：</b></font></td>
+                <td>{{item.sqlEscapeAll}}</td>
+            </tr>
+            <tr>
+                <td style="text-align:left;"><font size="3"><b>readFromBackup：</b></font></td>
+                <td>{{item.readFromBackup}}</td>
+            </tr>
+            <tr>
+                <td style="text-align:left;"><font size="3"><b>sqlSchema：</b></font></td>
+                <td>{{item.sqlSchema}}</td>
+
+
+            </tr>
+            <tr>
+                <td style="text-align:left;"><font size="3"><b>cpOnRead：</b></font></td>
+                <td>{{item.cpOnRead}}</td>
+            </tr>
+            <tr>
+                <td style="text-align:left;"><font size="3"><b>topValidator：</b></font></td>
+                <td>{{item.topValidator}}</td>
+
+
+            </tr>
+            <tr>
+                <td style="text-align:left;"><font size="3"><b>partLossPlc：</b></font></td>
+                <td>{{item.partLossPlc}}</td>
+            </tr>
+            <tr>
+                <td style="text-align:left;"><font size="3"><b>encryptionEnabled：</b></font></td>
+                <td>{{item.encryptionEnabled}}</td>
+            </tr>
+            <tr>
+                <td style="text-align:left;"><font size="3"><b>qryParallelism：</b></font></td>
+                <td>{{item.qryParallelism}}</td>
+            </tr>
+            <tr>
+                <td style="text-align:left;"><font size="3"><b>evtsDisabled：</b></font></td>
+                <td>{{item.evtsDisabled}}</td>
+
+
+            </tr>
+            <tr>
+                <td colspan="6" style="text-align:center;"><font size="3"><b>AFF:RendezvousAffinityFunction</b></font>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="text-align:left;"><font size="3"><b>parts：</b></font></td>
+                <td>{{item.parts}}</td>
+            </tr>
+            <tr>
+                <td style="text-align:left;"><font size="3"><b>mask：</b></font></td>
+                <td>{{item.mask}}</td>
+
+
+            </tr>
+
+            <tr>
+                <td style="text-align:left;"><font size="3"><b>exclNeighbors：</b></font></td>
+                <td>{{item.exclNeighbors}}</td>
+            </tr>
+            <tr>
+                <td style="text-align:left;"><font size="3"><b>affinityBackupFilter：</b></font></td>
+                <td>{{item.affinityBackupFilter}}</td>
+            </tr>
+            <tr>
+                <td style="text-align:left;"><font size="3"><b>exclNeighborsWarn：</b></font></td>
+                <td>{{item.exclNeighborsWarn}}</td>
+            </tr>
+            <tr>
+                <td style="text-align:left;"><font size="3"><b>backupFilter：</b></font></td>
+                <td>{{item.backupFilter}}</td>
+
+
+            </tr>
+            <tr>
+                <td colspan="6" style="text-align:center;"><font size="3"><b>NODEFILTER:IgniteAllNodesP#3F7CE7icate</b></font>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+</html>

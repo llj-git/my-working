@@ -1,0 +1,35 @@
+<meta charset="utf-8">
+<div style="margin-bottom:5px"> 
+	<span><font style="font-weight:bold;">总节点:</font>{{nodeLength}}</span>&nbsp;&nbsp;&nbsp;
+	<span><font color="green">Normal:</font>{{normalNodeSum}}</span> &nbsp;&nbsp;&nbsp;
+	<span><font color="red">Stop:</font>{{StopNodeSum}}</span>&nbsp;&nbsp;&nbsp;
+	<span>未知状态:{{nodeLength - normalNodeSum - StopNodeSum}}</span>
+	<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font style="font-weight:bold;">执行方式:</font></span>
+	<span>&nbsp;&nbsp;<input type="radio" name="radioCheck" value="0" ng-model="checkedType"/>串行</span>
+	<span>&nbsp;&nbsp;<input type="radio" name="radioCheck" value="1" ng-model="checkedType"/>并行</span>
+	<span>&nbsp;&nbsp;<button class="btn btn-primary btn-sm" style="background-color:#0080d8;border-color:#0080d8;color:#fff;" type="button" ng-click="runBtn()">启动</button></span>
+	<span>&nbsp;&nbsp;<button class="btn btn-primary btn-sm" style="background-color:#0080d8;border-color:#0080d8;color:#fff;" type="button" ng-click="stopBtn()">停止</button></span>
+	<span>&nbsp;&nbsp;<button class="btn btn-primary btn-sm" style="background-color:#0080d8;border-color:#0080d8;color:#fff;" type="button" ng-click="refreshBtn()">刷新</button></span>
+</div>
+<table
+	class="am-table am-table-bordered am-table-striped am-table-hover" style="text-align: center;">
+	<thead>
+		<tr>
+			<th style="text-align: center;">&nbsp;&nbsp;</th>
+			<th style="text-align: center;">IP</th>
+			<th style="text-align: center;">节点名称</th>
+			<th style="text-align: center;">状态</th>
+			<th style="text-align: center;">部署路径</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="appNodeInfo in appNodeList">
+			<td class="am-text-middle"><input type="checkbox" value="{{appNodeInfo}}"/></td>
+			<td class="am-text-middle">{{appNodeInfo.ip}}</td>
+			<td class="am-text-middle">{{appNodeInfo.nodeName}}</td>
+			<td class="am-text-middle"
+				ng-class="{'stop':'stop','normal':'normal'}['{{appNodeInfo.state}}']">{{appNodeInfo.state}}</td>
+			<td class="am-text-middle">{{appNodeInfo.deployPath}}</td>
+		</tr>
+	</tbody>
+</table>

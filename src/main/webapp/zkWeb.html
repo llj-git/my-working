@@ -1,0 +1,205 @@
+<html ng-app="zkManage">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--[if lt IE 9]>
+<script src="resources/skeleton/js/modernizr.js "></script>
+<script src="resources/skeleton/js/amazeui.ie8polyfill.min.js"></script>
+<script src="resources/skeleton/js/angular.min-1.2.32.js"></script>
+<![endif]-->
+<!--[if gte IE 9]><!-->
+<script src="resources/skeleton/js/angular.min-1.6.5.js"></script>
+<!--<![endif]-->
+<script type="text/javascript" src="resources/skeleton/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="resources/skeleton/js/amazeui.min.js"></script>
+<link rel="stylesheet" type="text/css" href="resources/skeleton/css/amazeui.min.css" />
+
+<link rel="stylesheet" type="text/css" href="resources/skeleton/zTree/css/zTreeStyle/zTreeStyle.css" />
+<script type="text/javascript" src="resources/skeleton/zTree/js/jquery.ztree.all.min.js"></script>
+<script type="text/javascript" src="resources/skeleton/zTree/js/jquery.ztree.core.min.js"></script>
+<script type="text/javascript" src="resources/skeleton/zTree/js/jquery.ztree.exhide.min.js"></script>
+<script type="text/javascript" src="resources/skeleton/zTree/js/jquery.ztree.exedit.min.js"></script>
+<script type="text/javascript" src="resources/skeleton/zTree/js/jquery.ztree.excheck.min.js"></script>
+<script src="resources/biz/controller/zkManageController.js"></script>
+<style>
+div,body,html{margin:0; padding:0;}
+#left,#right,#middle,#right_tree{ height:100%; width:100%; position:absolute;margin:0; padding:0;}
+#left{width:330px; background:#FFFFFF;}
+#middle{ width:5px; background:#FFFFFF;left:330px;}
+#middle:hover{ cursor:w-resize;}
+#right{background:#FFFFFF; left:330px; width:550px;margin-left:10px;}
+#right_tree{ right:5px;left:900px; width:auto;border:1px solid #D0D0D0;}
+li{white-space:nowrap;}
+#dirli:hover{background:#D2E9FF;}
+
+div#rMenu {position:absolute; visibility:hidden;text-align: left;padding:0;width:150px;background-color: #F0F0F0;border:1px solid #D0D0D0;}
+div#rMenu ul li{
+	height:25px;
+	margin:0;
+	padding:0;
+	cursor: pointer;
+	list-style: none outside none;
+	background-color: #F0F0F0;
+}
+div#rMenu ul li:hover{
+	color:#FFFFFF;
+	background-color:#D0D0D0;       
+}
+
+#treeChock{
+	height:93%;
+	width:100%;
+	position:absolute;
+	overflow:auto;
+}
+
+</style>
+
+<!--[if lt IE 9]>
+<style>
+body{
+	font-size:16px;
+}
+#treeChock{
+	height:500px;
+	width:100%;
+	position:absolute;
+	overflow:scoll;
+}
+</style>
+<![endif]-->
+</head>
+<body ng-controller="zkManageController">
+	<div id="left" class="am-panel am-panel-default">
+	<div class="am-panel-hd" style="height:55px;">
+		<input type="text" id="zkAddress" value="{{zkIpPath}}"/>
+		<a href="#" style="padding-left: 10px;" class="am-icon-search" ng-click="btnQueryZk();"></a>
+	</div>
+	<div id="treeChock">
+		<ul id="treeDemo" class="ztree" ng-model="selectNode" value="1" style="height:100%;width:100%; position:absolute;border:0px;padding-top:10px;margin:0;"></ul>
+	</div>
+	</div>
+	<div id="middle"></div>
+	<div id="right" class="am-panel am-panel-default">	
+		<div class="am-panel-hd" style="height:55px;">
+			<div id="addressPath" style="width:75%;height:100%;display:inline;float:left;
+			word-break: break-all; word-wrap:break-word;">Path</div>
+			<div id="hideJsonDataBtn" style="float: right;display:inline;" class="am-icon-eye-slash" ng-click="hideJsonData()"></div>
+			<div id="showTreebtn" ng-click="showJsonTree();" class="am-icon-eye" style="display: none;height:100%;text-align: right;"></div>
+		</div>
+		
+   		 <div class="am-panel-bd" style="overflow:hidden">
+    		<div>
+				<textarea rows="21" cols="63" name="data" id="textArea"></textarea>
+				
+			<div style="padding-left:20px;padding-top:20px">
+		<!-- 		<button type="button" class="am-btn am-btn-secondary am-round" id="save" ng-click="saveData()"> <i class="am-icon-floppy-o"></i>&nbsp;保存</button> -->
+				<button type="button" class="am-btn am-btn-secondary am-round" id="export" ng-click="exportData2Sql()"> <i class="am-icon-floppy-o"></i>&nbsp;导出</button>
+			</div>
+			</div>
+		</div>
+    </div>
+  
+  <div id="right_tree" class="am-panel am-panel-default">
+  	<div id="hideJsonTreeBtn" class="am-panel-hd" ng-click="hideJsonTree();" style="height:55px;"><span class="am-icon-eye-slash"></span></div>  		 
+  	<div class="am-panel-hd" id="showJsonDataBanner" style="display: none;style="height:55px;">
+			<div ng-click="showJsonData();" class="am-icon-eye"></div>
+		</div>
+  	<div id="treeChock">
+		<ul id="treeTextDemo" class="ztree" ng-model="selectRightNode" value="1" style="height:100%;width:43%; position:absolute;border:0px;padding-top:10px;margin:0;"></ul>
+  	</div>
+  </div>
+    <!-- 模态窗口 -->
+    <div class="am-modal am-modal-alert" tabindex="-1" id="my-modal1">
+		<div class="am-modal-dialog" style="border-radius: 18px;">
+			<div class="am-modal-hd"style="background-color: #66B3FF; color: #FFFFFF; border-top-left-radius: 16px; border-top-right-radius: 16px;" id="modalTitle">{{alertTitle}}</div>
+			<div class="am-modal-bd"
+				style="background-color: #FFFFFF; min-height: 100px; padding-top: 35px;font-size:105%;" id="modalInfo">{{alertInfo}}</div>
+			<div class="am-modal-footer" style="border-bottom-left-radius: 16px; border-bottom-right-radius: 16px;">
+				<span class="am-modal-btn">确定</span>
+			</div>
+		</div>
+	</div>
+	<div class="am-modal am-modal-alert" tabindex="-1" id="my-modal2">
+		<div class="am-modal-dialog" style="border-radius: 18px;">
+			<div class="am-modal-hd"style="background-color: #FF5151; color: #FFFFFF; border-top-left-radius: 16px; border-top-right-radius: 16px;">{{alertTitle}}</div>
+			<div class="am-modal-bd"
+				style="background-color: #FFFFFF; min-height: 100px; padding-top: 35px;font-size:105%;">{{alertInfo}}</div>
+			<div class="am-modal-footer" style="border-bottom-left-radius: 16px; border-bottom-right-radius: 16px;">
+				<span class="am-modal-btn">确定</span>
+			</div>
+		</div>
+	</div>
+	<!-- 节点添加输入框 模态窗口-->
+	<div class="am-modal am-modal-prompt" tabindex="-1" id="my-prompt">
+  		<div class="am-modal-dialog">
+   		 	<div class="am-modal-hd">{{selectNodePath}}</div>
+    		 <div class="am-modal-bd"> 请输入新节点标题
+    		 <input id="inf" type="text" class="am-modal-prompt-input">
+   			 </div>
+   			 <div class="am-modal-footer">
+     			 <span class="am-modal-btn" data-am-modal-cancel>取消</span>
+     			 <span class="am-modal-btn" data-am-modal-confirm>提交</span>
+   			 </div>
+ 		 </div>
+	</div>
+	<!-- 节点复制输入框 模态窗口-->
+	<div class="am-modal am-modal-prompt" tabindex="-1" id="my-promptcp">
+  		<div class="am-modal-dialog">
+   		 	<div class="am-modal-hd">复制{{selectNodePath}}</div>
+    		 <div class="am-modal-bd"> 请输入新节点标题
+    		 <input id="ins" type="text" class="am-modal-prompt-input">
+   			 </div>
+   			 <div class="am-modal-footer">
+     			 <span class="am-modal-btn" data-am-modal-cancel>取消</span>
+     			 <span class="am-modal-btn" data-am-modal-confirm>提交</span>
+   			 </div>
+ 		 </div>
+	</div>
+	<!-- 节点删除确认框 模态窗口-->
+	<div class="am-modal am-modal-confirm" tabindex="-1" id="my-confirm">
+  <div class="am-modal-dialog">
+    <div class="am-modal-hd">{{selectNodePath}}</div>
+    <div class="am-modal-bd">你，确定要删除该节点吗？ </div>
+    <div class="am-modal-footer">
+      <span class="am-modal-btn" data-am-modal-cancel>取消</span>
+      <span class="am-modal-btn" data-am-modal-confirm>确定</span>
+    </div>
+  </div>
+</div>
+
+<!-- 输入需求号 模态窗口-->
+<div class="am-modal am-modal-prompt" tabindex="-1" id="inputReqNo">
+	<div class="am-modal-dialog">
+		<div class="am-modal-hd">请输入需求信息</div>  
+		<div class="am-form-group">
+		    <label for="reqNo" class="am-u-sm-3 am-form-label">需求编号：</label>
+		    <div class="am-u-sm-9">
+		      <input id="reqNo" type="text" class="am-modal-prompt-input" ng-model="reqNo" placeholder="请输入需求编号">
+		    </div>
+		</div>
+		<div class="am-form-group">
+		    <label for="zkId" class="am-u-sm-3 am-form-label">目标ZK：</label>
+		    <div class="am-u-sm-9">
+		     <!--input id="zkId" type="text" class="am-modal-prompt-input" ng-model="zkId"  placeholder="请输入zookeeper标识"-->
+			 <select id="zkId" ng-model="zkId" data-am-selected="{btnWidth: '80%', btnSize: 'sm', btnStyle: 'am-btn am-btn-default'}">
+		        <option ng-repeat="x in zkCfg" value="{{x.zkId}}">{{x.zkName}}({{x.zkHost}})</option>     
+		    </select>
+		    </div>
+		</div>  
+		 <div class="am-modal-footer">
+ 			 <span class="am-modal-btn" data-am-modal-cancel>取消</span>
+ 			 <span class="am-modal-btn" data-am-modal-confirm>提交</span>
+		 </div>
+	</div>
+</div>
+
+<div id="rMenu">
+	<ul style="padding:0;margin:0;">
+		<li id="m_add" ng-click="addNode();"><i class="am-icon-plus-square" style="color:#32CD32;padding-left:10px;"></i>&nbsp; 添加</li>
+		<li id="m_copy" ng-click="copyNode();"><i class="am-icon-copy" style="color:#87CEEB;padding-left:10px;"></i>&nbsp; 复制</li>
+		<li id="m_del" ng-click="deleteNode();"><i class="am-icon-remove" style="color:#FF0000;padding-left:10px;"></i>&nbsp; 删除</li>
+	</ul>
+</div>
+</body>
+</html>

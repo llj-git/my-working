@@ -1,0 +1,125 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.newland.boss.cloud.web.bds</groupId>
+	<artifactId>bdsWeb</artifactId>
+	<packaging>war</packaging>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>bdsWeb Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<springframework.version>4.3.1.RELEASE</springframework.version>
+	</properties>
+	<dependencies>
+			<dependency>
+			<groupId>com.newland.boss.cloud.ruleengine</groupId>
+			<artifactId>re-core</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.newland.sri.ccp.rtc</groupId>
+			<artifactId>bdsswitch</artifactId>
+			<version>3.0.0-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.zookeeper</groupId>
+			<artifactId>zookeeper</artifactId>
+			<version>3.4.10</version>
+		</dependency>
+		<!-- spring -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${springframework.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${springframework.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${springframework.version}</version>
+		</dependency>
+		<!-- db -->
+		<dependency>
+			<groupId>com.oracle</groupId>
+			<artifactId>ojdbc6</artifactId>
+			<version>12.1.0.1-atlassian-hosted</version>
+		</dependency>
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>druid</artifactId>
+			<version>1.1.8</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>2.6</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.clojure</groupId>
+		    <artifactId>java.jdbc</artifactId>
+		    <version>0.7.8</version>
+		</dependency>
+		<dependency>
+		    <groupId>com.github.jsqlparser</groupId>
+		    <artifactId>jsqlparser</artifactId>
+		    <version>1.1</version>
+		</dependency>
+	</dependencies>
+	
+	
+	<build>
+		<finalName>maintenWeb</finalName>
+		<plugins>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.4</version>
+				<configuration>
+					<warSourceDirectory>src/main/webapp</warSourceDirectory>
+					<warName>maintenWeb</warName>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+	
+					<packagingIncludes>
+						**/userInfo/**/*.class,
+						**/balanceLibrary/**/*.class,
+						**/util/**/*.class,
+						**/balanceLibrary/**/*.class,
+						**/config/**/*.class,
+						**/life/*,
+						**/life/*/*,
+						WEB-INF/classes/*.*,
+						WEB-INF/web.xml,
+						WEB-INF/lib/*.jar,
+						resources/**/*.*,
+						db_dml_query.html,
+						query_sql_compare2Db.html,
+						query_sql.html
+					</packagingIncludes>
+					<packagingExcludes>
+						**/balanceLibrary/controller/DMLController.class
+					</packagingExcludes>
+	
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
+
+
+		</plugins>
+	</build>
+
+</project>

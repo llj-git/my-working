@@ -1,0 +1,22 @@
+<table class="am-table am-table-bordered am-table-striped am-table-hover">
+	<thead>
+		<tr>
+			<th>Worker</th>
+			<th>Servrer</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td class="am-text-top">
+				<ul ng-repeat="worker in serviceList.workerList track by $index">
+					<li>{{worker}}</li>
+				</ul>
+			</td>
+			<td class="am-text-top">
+				<ul ng-repeat="servrer in serviceList.servrerList track by $index">
+					<li>{{servrer}}</li>
+				</ul>
+			</td>
+		</tr>
+	</tbody>
+</table>

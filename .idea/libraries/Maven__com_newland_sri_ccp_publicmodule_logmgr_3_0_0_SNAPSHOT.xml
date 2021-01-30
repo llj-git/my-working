@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.newland.sri.ccp.publicmodule:logmgr:3.0.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/newland/sri/ccp/publicmodule/logmgr/3.0.0-SNAPSHOT/logmgr-3.0.0-20201204.084307-378.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/newland/sri/ccp/publicmodule/logmgr/3.0.0-SNAPSHOT/logmgr-3.0.0-20201204.084307-378-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/newland/sri/ccp/publicmodule/logmgr/3.0.0-SNAPSHOT/logmgr-3.0.0-20201204.084307-378-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,236 @@
+<html ng-app="zkManage">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--[if lt IE 9]>
+<script src="resources/skeleton/js/modernizr.js "></script>
+<script src="resources/skeleton/js/amazeui.ie8polyfill.min.js"></script>
+<script src="resources/skeleton/js/angular.min-1.2.32.js"></script>
+<![endif]-->
+<!--[if gte IE 9]><!-->
+<script src="resources/skeleton/js/angular.min-1.6.5.js"></script>
+<!--<![endif]-->
+<script type="text/javascript"
+	src="resources/skeleton/js/jquery-1.11.3.min.js"></script>
+<script src="resources/skeleton/js/jquery.placeholder.min.js"></script>
+	<script type="text/javascript"
+	src="resources/skeleton/js/angular-sanitize.min.js"></script>
+<script type="text/javascript"
+	src="resources/skeleton/js/amazeui.min.js"></script>
+<link rel="stylesheet" type="text/css"
+	href="resources/skeleton/css/amazeui.min.css" />
+<link rel="stylesheet" type="text/css"
+	href="resources/skeleton/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css"
+	href="resources/skeleton/zTree/css/zTreeStyle/zTreeStyle.css" />
+<script type="text/javascript"
+	src="resources/skeleton/zTree/js/jquery.ztree.all.min.js"></script>
+<script type="text/javascript"
+	src="resources/skeleton/zTree/js/jquery.ztree.core.min.js"></script>
+<script type="text/javascript"
+	src="resources/skeleton/zTree/js/jquery.ztree.exhide.min.js"></script>
+<script type="text/javascript"
+	src="resources/skeleton/zTree/js/jquery.ztree.exedit.min.js"></script>
+<script type="text/javascript"
+	src="resources/skeleton/plugins/ngtable/js/ng-table.min.js"></script>
+<script type="text/javascript"
+	src="resources/skeleton/plugins/layer/1.9.3/layer.js"></script>
+<script src="resources/includeCss_3rd.js"></script>
+<script src="resources/biz/controller/cacheMetrics.js"></script>
+<style>
+div, body, html {
+	margin: 0;
+	padding: 0;
+}
+
+#left, #right, #middle {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	margin: 0;
+	padding: 0;
+}
+
+#left {
+	width: 200px;
+	background: #FFFFFF;
+}
+
+#middle {
+	width: 5px;
+	background: #FFFFFF;
+	left: 200px;
+}
+
+#middle:hover {
+	cursor: w-resize;
+}
+
+#right {
+	
+	background: #FFFFFF;
+	left: 205px;
+	width: auto;
+}
+
+#pk {
+	width: 100%;
+	float: left;
+}
+
+#index {
+	width: 50%;
+	padding: 18px;
+	float: left;
+}
+
+.title {
+	font-weight: bold;
+}
+
+.headborder {
+	border: 1px solid #ddd;
+	border-right-width: 0.5px;
+	padding-top: 8.4px;
+	padding-bottom: 8.4px;
+}
+
+.list {
+	width: 25%;
+	float: left;
+	padding: 8.4px;
+	border: 1px solid #ddd;
+	/*合并边框*/
+	border-collapse: collapse;
+}
+
+#index .indexselect {
+	height: 33px;
+	width: 180px;
+}
+
+#index .indexvalue {
+	height: 33px;
+	width: 118px;
+}
+table, table tr th, table tr td {
+	border: 1px solid #0094ff;
+}
+ tr td{
+				width: 50px;
+				height: 50px;
+				text-align: center;
+			}
+</style>
+
+
+</head>
+<body ng-controller="zkManageController as dml">
+	<!-- 	<div style="padding-top: 2px"></div>
+	<header class="am-topbar am-topbar-inverse admin-header"
+		style="margin-bottom: 0px;">
+		<div class="am-topbar-brand">
+			<strong>Zookeeper</strong> <small>管理系统</small>
+		</div>
+	</header> -->
+	<div id="zk_app">
+		<div id="left" class="am-panel am-panel-default">
+			<div class="am-panel-hd">缓存列表</div>
+			<div
+				style="height: 800px; width: 100%; position: absolute; overflow: scroll;">
+				<p>
+					<input type="text" ng-model="test" placeholder="请在这里Cachename">
+				</p>
+				<ul id="treeDemo" class="ztree" ng-model="selectNode" value="1"
+					style="height: 800px; width: 100%; position: absolute; border: 0px; padding-top: 10px; margin: 0;">
+					<li ng-repeat="x in cacheNames | filter:test | orderBy:x"
+						ng-click="getCacheinfo(x)">{{ x }}</li>
+				</ul>
+			</div>
+		</div>
+		
+		<div id="right" class="am-panel am-panel-default">
+		<table ng-table="dml" id="dataTable"
+			class="table table-condensed table-bordered table-striped am-table-hover" style="display:none;">
+			<tbody>
+			<tr>
+				<td ng-repeat="(column,columnValue) in data[0]" ng-if="column!='ROWID' && column!='PK_SEQ'" style="background: #3F7CE7;color:#FFF;">
+					{{column}}
+				</td>
+				<td ng-repeat="(key,columnValue) in data[0]"  style="text-align: center">
+					{{columnValue}}
+				</td>
+			</tr>
+		</table>
+			</tbody>
+
+		
+		
+						
+				<!--  <table  class="am-table am-table-bordered am-table-striped am-table-hover"  ng-repeat="param in data">
+	<tr>
+		<td colspan="6">缓存节点明细</td>
+	</tr>			
+				<tr>
+						<td><font size="1" color="red"><small><b>缓存名称</font></td>
+						<td><font size="1"><small>{{param.cacheName}}</td>
+						<td><font size="1" color="red"><small><b>已执行查询数</font></td>
+						<td><font size="1"><small>{{param.executions}}</td>
+						<td><font size="1" color="red"><small><b>缓存访问命中率</font></td>
+						<td><font size="1"><small>{{param.hitPerc}}</td>
+						</tr>
+
+						<tr>
+						<td><font size="1" color="red"><small><b>缓存访问未命中</font></td>
+						<td><font size="1"><small>{{param.misses}}</td>
+						<td><font size="1" color="red"><small><b>缓存模式</font></td>
+						<td><font size="1"><small>{{param.mode}}</td>
+						<td><font size="1" color="red"><small><b>缓存访问命中数</font></td>
+						<td><font size="1"><small>{{param.hits}}</td>
+						</tr>
+
+				<tr>
+						<td><font size="1" color="red"><small><b>堆外缓存主条目数</font></td>
+						<td><font size="1"><small>{{param.offPrimaryEntries}}</td>
+						<td><font size="1" color="red"><small><b>缓存编号</font></td>
+						<td><font size="1"><small>{{param.partitions}}</td>
+						<td><font size="1" color="red"><small><b>堆外缓存备份条目数</font></td>
+						<td><font size="1"><small>{{param.offBackupEntries}}</td>
+				</tr>
+				<tr>
+						<td><font size="1" color="red"><small><b>查询平均时长</font></td>
+						<td><font size="1"><small>{{param.qurAverageTime}}</td>
+						<td><font size="1" color="red"><small><b>失败查询数</font></td>
+						<td><font size="1"><small>{{param.qurFails}}</td>
+						<td><font size="1" color="red"><small><b>堆外缓存总条目数</font></td>
+						<td><font size="1"><small>{{param.offEntries}}</td>
+				</tr>
+				<tr>
+					<td><font size="1" color="red"><small><b>缓存读操作次数</font></td>
+						<td><font size="1"><small>{{param.gets}}</td>
+						<td><font size="1" color="red"><small><b>缓存访问未命中率</font></td>
+						<td><font size="1"><small>{{param.missPerc}}</td>
+						<td><font size="1" color="red"><small><b>查询最小时长</font></td>
+						<td><font size="1"><small>{{param.qurMinTime}}</td>
+				</tr>
+				<tr>
+					<td><font size="1" color="red"><small><b>缓存节点数</font></td>
+						<td><font size="1"><small>{{param.nodeSizes}}</td>
+						<td><font size="1" color="red"><small><b>堆外缓存总大小</font></td>
+						<td><font size="1">{{param.offHeapAllocSize}}</td>
+						<td><font size="1" color="red"><small><b>缓存回滚次数</font></td>
+						<td><font size="1"><small>{{param.rollbacks}}</td>
+				</tr>
+				<tr>
+				<td><font size="1" color="red"><small><b>缓存提交次数</font></td>
+						<td><font size="1"><small>{{param.puts}}</td>
+						<td><font size="1" color="red"><small><b>查询最大时长</font></td>
+						<td><font size="1"><small>{{param.qurMaxTime}}</td>
+				</tr>
+				</table>
+				-->
+			</div>
+		
+	</div>
+</body>
+</html>

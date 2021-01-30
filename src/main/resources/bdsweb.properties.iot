@@ -1,0 +1,6 @@
+#true:init zk Data,false not init zk
+zk.switch=false
+
+#B3,IOT
+project.flag=IOT
+

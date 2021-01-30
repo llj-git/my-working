@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html ng-app="metLineApp">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>折线图</title>
+<link rel="stylesheet" type="text/css" href="../resources/skeleton/css/bootstrap.min.css"/>
+<script src="../resources/skeleton/js/jquery-3.3.1.min.js"></script>
+<script src="../resources/skeleton/js/angular.min-1.6.5.js"></script>
+<script src="../resources/skeleton/js/My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="../resources/skeleton/js/echarts.min.js"></script>
+<!--[if gte IE 9]><!-->
+<script src="resources/skeleton/js/angular.min-1.6.5.js"></script>
+<!--<![endif]-->
+<!--[if lt IE 9]>
+<script src="resources/skeleton/js/modernizr.js "></script>
+<script src="resources/skeleton/js/amazeui.ie8polyfill.min.js"></script>
+<script src="resources/skeleton/js/jquery-1.11.3.min.js"></script>
+<script src="resources/skeleton/js/angular.min-1.2.32.js"></script>
+<![endif]-->	
+<style type="text/css">
+	.lineGraph{
+		height:500px;
+	}
+</style>
+</head>
+<body ng-controller="metLineController">
+	<div class="headContainer">
+	
+		主机名：<div style="display: inline-block; margin-right: 10px; width: 10%;">
+		
+			<select class="input-text" style="cursor: pointer;" ng-model="data.hostName">
+				<option value="" selected="selected">全部</option>
+				<option ng-repeat="host in hostName" value="{{host}}">{{host}}</option>
+			</select>
+		</div>
+		应用实例：<div style="display: inline-block; margin-right: 10px; width: 10%;">
+		
+			<select class="input-text" style="cursor: pointer;" ng-model="data.appInstanceName">
+				<option value="" selected="selected">全部</option>
+				<option ng-repeat="appName in appInstanceName" value="{{appName}}">{{appName}}</option>
+			</select>
+			
+		</div>
+		文件名：<div style="display: inline-block; margin-right: 10px; width: 10%;">
+		
+			<select class="input-text" style="cursor: pointer;" ng-model="data.fileName">
+				<option value="" selected="selected">全部</option>
+				<option ng-repeat="file in fileName" value="{{file}}">{{file}}</option>
+			</select>
+			
+		</div>
+		周期：<div style="display: inline-block; margin-right: 10px; width: 19%;">
+			<input type="text" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd', maxDate:'#F{$dp.$D(\'endDate\')||\'3000-01-01\'}'})" id="beginDate" class="input-text Wdate" style="width:45%; cursor: pointer;" ng-model="data.beginDate"> 
+			-
+			<input type="text" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd', minDate:'#F{$dp.$D(\'beginDate\')}',maxDate:'3000-01-01'})" id="endDate" class="input-text Wdate" style="width:45%; cursor: pointer;" ng-model="data.endDate">
+		</div>
+		<div style="display: inline-block;">
+			<span><button class="btn btn-primary" ng-click="queryBtn()">查询</button></span>
+			<span><button class="btn btn-primary" ng-click="resetBtn()">重置</button></span>
+		</div>
+	</div>
+	<div id="lineGraph" class="lineGraph"></div>
+	<script type="text/javascript" src="../resources/biz/controller/metricsLineController.js"></script>
+</body>
+</html>

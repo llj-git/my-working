@@ -1,0 +1,60 @@
+
+o
+java:S22930"YReplace the type specification in this constructor call with the diamond operator ("<>").(“Ş®²
+`
+java:S3252"EUse static access with "com.alibaba.fastjson.JSON" for "parseObject".(òêÊÚûÿÿÿÿ
+P	java:S125""<This block of commented-out lines of code should be removed.(¿ºy
+J
+java:S3740i"/Provide the parametrized type for this generic.(ÆºÎ¢ıÿÿÿÿ
+Q	java:S125"<This block of commented-out lines of code should be removed.(ÜÑö˜
+h
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 28 to the 15 allowed.(©ù¶·
+e
+java:S4488Y"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(ŒÁÏŒùÿÿÿÿ
+t
+java:S2293f"YReplace the type specification in this constructor call with the diamond operator ("<>").(­ä÷Éüÿÿÿÿ
+J
+java:S3740f"/Provide the parametrized type for this generic.(­ä÷Éüÿÿÿÿ
+E
+java:S3740G"/Provide the parametrized type for this generic.(®Íå˜
+`
+java:S4488v"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(»Ù©²
+`	java:S112w"FDefine and throw a dedicated exception instead of using a generic one.(É¹ü‡úÿÿÿÿ
+J
+java:S3740&"/Provide the parametrized type for this generic.(ˆŸóøÿÿÿÿ
+F
+java:S3740†"/Provide the parametrized type for this generic.(¤ô“‹
+Q	java:S125T"<This block of commented-out lines of code should be removed.(ÜäÍ…
+`
+java:S3252\"EUse static access with "com.alibaba.fastjson.JSON" for "parseObject".(òêÊÚûÿÿÿÿ
+J
+java:S3740f"/Provide the parametrized type for this generic.(­ä÷Éüÿÿÿÿ
+`
+java:S3252|"EUse static access with "com.alibaba.fastjson.JSON" for "parseObject".(òêÊÚûÿÿÿÿ
+`	java:S112Z"FDefine and throw a dedicated exception instead of using a generic one.(ì†øÿÿÿÿ
+J
+java:S3740$"/Provide the parametrized type for this generic.(øû¡øÿÿÿÿ
+E
+java:S37400"/Provide the parametrized type for this generic.(“Ş®²
+E
+java:S3740;"/Provide the parametrized type for this generic.(®Íå˜
+t
+java:S2293$"YReplace the type specification in this constructor call with the diamond operator ("<>").(øû¡øÿÿÿÿ
+[	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(©ù¶·
+F
+java:S3740ˆ"/Provide the parametrized type for this generic.(Ïğ¤·
+V	java:S125^"<This block of commented-out lines of code should be removed.(¤ì—üúÿÿÿÿ
+p
+java:S2293†"YReplace the type specification in this constructor call with the diamond operator ("<>").(¤ô“‹
+Q	java:S125"<This block of commented-out lines of code should be removed.(Àˆ‰…
+F
+java:S3740†"/Provide the parametrized type for this generic.(¤ô“‹
+J
+java:S3740$"/Provide the parametrized type for this generic.(øû¡øÿÿÿÿ
+`
+java:S4488"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(¤äÅ™
+Q	java:S125-"<This block of commented-out lines of code should be removed.(éŸÍæ
+l
+java:S3008"QRename this field "LOGGER" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(şÎâ—üÿÿÿÿ
+E
+java:S37400"/Provide the parametrized type for this generic.(“Ş®²

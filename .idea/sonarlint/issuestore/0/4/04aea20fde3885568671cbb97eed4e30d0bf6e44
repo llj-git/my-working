@@ -1,0 +1,478 @@
+
+M
+java:S3740É"/Provide the parametrized type for this generic.(’Û”€8¢“™ô.
+L
+java:S3740®"/Provide the parametrized type for this generic.(Ä¯½8²‰™ô.
+M
+java:S3740ã"/Provide the parametrized type for this generic.(¬ã—±8¢“™ô.
+M
+java:S3740¨"/Provide the parametrized type for this generic.(…õ â8¢“™ô.
+l
+java:S1192¨"IDefine a constant instead of duplicating this literal "errorMsg" 4 times.(ö›•ôıÿÿÿÿ8œµ™ô.
+h
+java:S1192’"JDefine a constant instead of duplicating this literal "groupType" 4 times.(·Ğìâ8¢“™ô.
+h	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(ÓÑÔúÿÿÿÿ8’¡‘™ô.
+M
+java:S3740€"/Provide the parametrized type for this generic.(‘ëÌ£8»‹ˆ™ô.
+l
+java:S4488o"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(”“İĞøÿÿÿÿ8±÷‡™ô.
+K
+java:S3740y"/Provide the parametrized type for this generic.(Ä¯½8»‹ˆ™ô.
+L
+java:S3740ê"/Provide the parametrized type for this generic.(ú¥¹98ƒÀŠ™ô.
+
+java:S1130p"pRemove the declaration of thrown exception 'java.sql.SQLException' which is a subclass of 'java.lang.Exception'.(êÇÖ8Ø‡™ô.
+u
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 90 to the 15 allowed.(‰¨…üüÿÿÿÿ8’¡‘™ô.
+k
+java:S1192ó"NDefine a constant instead of duplicating this literal "instancename" 23 times.(ç¨Ö>8Æ‡†™ô.
+›
+java:S1130¥"xRemove the declaration of thrown exception 'com.jcraft.jsch.JSchException' which is a subclass of 'java.lang.Exception'.(’Á¹’şÿÿÿÿ8²‰™ô.
+J
+java:S1481”",Remove this unused "result1" local variable.(éÿ€8’¡‘™ô.
+K
+java:S3740D"/Provide the parametrized type for this generic.(Ä¯½8ÂŒ©íó.
+R
+java:S3740ï"/Provide the parametrized type for this generic.(¸³¬Êÿÿÿÿÿ8’¡‘™ô.
+R
+java:S3740Ş"/Provide the parametrized type for this generic.(É¢®Œùÿÿÿÿ8…”™ô.
+R
+java:S3740ã"/Provide the parametrized type for this generic.(ƒä•øÿÿÿÿ8¢“™ô.
+L
+java:S3740N"/Provide the parametrized type for this generic.(‘ëÌ£8Æ‡†™ô.
+R
+java:S3740ü"/Provide the parametrized type for this generic.(ü„±·üÿÿÿÿ8’¡‘™ô.
+V	java:S106¬"9Replace this use of System.out or System.err by a logger.(Ó×âÊ8ïô”™ô.
+R
+java:S3740´"/Provide the parametrized type for this generic.(İõ÷şÿÿÿÿ8»‹ˆ™ô.
+Q
+java:S3740z"/Provide the parametrized type for this generic.(‹Š´˜ùÿÿÿÿ8ÓÇíó.
+i
+java:S1192–"KDefine a constant instead of duplicating this literal "deployPath" 9 times.(½¾ã™8òøÉíó.
+v
+java:S2293G"YReplace the type specification in this constructor call with the diamond operator ("<>").(¬É’8ÂŒ©íó.
+e
+java:S1854{"CRemove this useless assignment to local variable "itemsForappname".(ıÃşÇúÿÿÿÿ8Æ‡†™ô.
+Z
+java:S1854ü"7Remove this useless assignment to local variable "arr".(‘ÑÜ¯şÿÿÿÿ8ˆÒ”™ô.
+v
+java:S2293}"YReplace the type specification in this constructor call with the diamond operator ("<>").(é¨Ê¬8Æ‡†™ô.
+¡
+java:S1130ì"‚Remove the declaration of thrown exception 'java.util.concurrent.ExecutionException' which is a subclass of 'java.lang.Exception'.(íİˆõ8’¡‘™ô.
+R
+java:S3740É"/Provide the parametrized type for this generic.(É¢®Œùÿÿÿÿ8…”™ô.
+\
+java:S1155í">Use isEmpty() to check whether the collection is empty or not.(ËÒ¿ê8’¡‘™ô.
+‹
+java:S1130p"nRemove the declaration of thrown exception 'java.io.IOException' which is a subclass of 'java.lang.Exception'.(êÇÖ8Ø‡™ô.
+Y
+java:S2696ê"6Make the enclosing method "static" or remove this set.(Ë½ì¹úÿÿÿÿ8¢“™ô.
+m
+java:S4488¤"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(ÛÅİùÿÿÿÿ8²‰™ô.
+m
+java:S1858å"J"reqJson" is already a string, there's no need to call "toString()" on it.(ÒÙŠÃûÿÿÿÿ8¢“™ô.
+w
+java:S2293®"YReplace the type specification in this constructor call with the diamond operator ("<>").(â¾è8ïô”™ô.
+M
+java:S3740÷"/Provide the parametrized type for this generic.(Ö³ıœ8’¡‘™ô.
+u
+java:S2293D"YReplace the type specification in this constructor call with the diamond operator ("<>").(Ä¯½8ÂŒ©íó.
+Y	java:S125ô"<This block of commented-out lines of code should be removed.(òì´€8’¡‘™ô.
+|
+java:S2293´"YReplace the type specification in this constructor call with the diamond operator ("<>").(İõ÷şÿÿÿÿ8¢“™ô.
+R
+java:S3740Ô"/Provide the parametrized type for this generic.(¹Ùã¦øÿÿÿÿ8¢“™ô.
+L
+java:S3740f"/Provide the parametrized type for this generic.(ÿÎ™Ä8Æ‡†™ô.
+Y	java:S125Œ"<This block of commented-out lines of code should be removed.(ò½é8»‹ˆ™ô.
+R
+java:S3740°"/Provide the parametrized type for this generic.(ıÃşÇúÿÿÿÿ8Æ‡†™ô.
+M
+java:S3740º"/Provide the parametrized type for this generic.(ƒß8üÏ•™ô.
+R
+java:S3740³"/Provide the parametrized type for this generic.(î€°åıÿÿÿÿ8¢“™ô.
+w
+java:S2293ù"YReplace the type specification in this constructor call with the diamond operator ("<>").(¸ş·”8¢“™ô.
+\
+java:S1155Ú">Use isEmpty() to check whether the collection is empty or not.(™õÄƒ8ƒÀŠ™ô.
+^	java:S125ê"<This block of commented-out lines of code should be removed.(óéƒ÷şÿÿÿÿ8’¡‘™ô.
+R
+java:S3740ı"/Provide the parametrized type for this generic.(¿•¢Äÿÿÿÿÿ8ÎË‹™ô.
+
+java:S1319"mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(‰¨…üüÿÿÿÿ8’¡‘™ô.
+M
+java:S3740‚"/Provide the parametrized type for this generic.(ƒß8ïô”™ô.
+U	java:S106¨"9Replace this use of System.out or System.err by a logger.(£¨Ä8¢“™ô.
+|
+java:S2293¼"YReplace the type specification in this constructor call with the diamond operator ("<>").(‘ÑÜ¯şÿÿÿÿ8œµ™ô.
+^	java:S125Ş"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ8üÏ•™ô.
+u
+java:S3776Ô"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(¹Ùã¦øÿÿÿÿ8¢“™ô.
+[
+java:S1481E"9Remove this unused "myFinalResultMapList" local variable.(‹Š´˜ùÿÿÿÿ8ª ¸¼ô.
+w
+java:S2293»"YReplace the type specification in this constructor call with the diamond operator ("<>").(â¾è8¾Ï’™ô.
+]	java:S125K"<This block of commented-out lines of code should be removed.(ä“ä­øÿÿÿÿ8Æ‡†™ô.
+L
+java:S3740}"/Provide the parametrized type for this generic.(é¨Ê¬8»‹ˆ™ô.
+U	java:S106»"9Replace this use of System.out or System.err by a logger.(ÌŞøO8²‰™ô.
+e
+java:S1854F"CRemove this useless assignment to local variable "itemsForappname".(ıÃşÇúÿÿÿÿ8Û°¿™ô.
+M
+java:S3740¸"/Provide the parametrized type for this generic.(»ù‘8¢“™ô.
+J
+java:S1068+"/Remove this unused "userInfoDao" private field.(Ù¸—çşÿÿÿÿ
+M
+java:S3740™"/Provide the parametrized type for this generic.(ÿÎ™Ä8»‹ˆ™ô.
+M
+java:S3740­"/Provide the parametrized type for this generic.(¨‹ôü8¢“™ô.
+M
+java:S3740Å"/Provide the parametrized type for this generic.(¡ŒÜù8¢“™ô.
+P
+java:S1172"-Remove this unused method parameter "resMsg".(‰¨…üüÿÿÿÿ8’¡‘™ô.
+L
+java:S3740}"/Provide the parametrized type for this generic.(é¨Ê¬8»‹ˆ™ô.
+q
+java:S2259Î"NA "NullPointerException" could be thrown; "newResultMapList" is nullable here.(§’Ëöşÿÿÿÿ8¢“™ô.
+v
+java:S2293H"YReplace the type specification in this constructor call with the diamond operator ("<>").(é¨Ê¬8Æ‡†™ô.
+W
+java:S1481°"4Remove this unused "itemsForappname" local variable.(ıÃşÇúÿÿÿÿ8²‰™ô.
+g
+java:S1192ò"IDefine a constant instead of duplicating this literal "appname" 32 times.(€’‡¤8ÎË‹™ô.
+M
+java:S3740¸"/Provide the parametrized type for this generic.(îıÔ®8²‰™ô.
+Q
+java:S3740F"/Provide the parametrized type for this generic.(ıÃşÇúÿÿÿÿ8Û°¿™ô.
+u
+java:S2293y"YReplace the type specification in this constructor call with the diamond operator ("<>").(Ä¯½8»‹ˆ™ô.
+M
+java:S3740²"/Provide the parametrized type for this generic.(é¨Ê¬8²‰™ô.
+{
+java:S2293E"YReplace the type specification in this constructor call with the diamond operator ("<>").(‹Š´˜ùÿÿÿÿ8ÂŒ©íó.
+r
+java:S1192Æ"ODefine a constant instead of duplicating this literal "sessionTimeOut" 6 times.(×œÂØúÿÿÿÿ8¾Ï’™ô.
+g
+java:S1192¦"IDefine a constant instead of duplicating this literal "appitems" 5 times.(òÁŞï8Æ‡†™ô.
+{
+java:S2293z"YReplace the type specification in this constructor call with the diamond operator ("<>").(‹Š´˜ùÿÿÿÿ8ÓÇíó.
+M
+java:S3740°"/Provide the parametrized type for this generic.(Ëºµ±8¢“™ô.
+M
+java:S3740­"/Provide the parametrized type for this generic.(¨‹ôü8¢“™ô.
+o
+java:S3776ê"RRefactor this method to reduce its Cognitive Complexity from 25 to the 15 allowed.(ú¥¹98ƒÀŠ™ô.
+Q
+java:S3740E"/Provide the parametrized type for this generic.(‹Š´˜ùÿÿÿÿ8ÂŒ©íó.
+R
+java:S3740Ÿ"/Provide the parametrized type for this generic.(³Şñ·øÿÿÿÿ8¢“™ô.
+M
+java:S3740ø"/Provide the parametrized type for this generic.(ƒê¤‡8¢“™ô.
+h	java:S112ã"FDefine and throw a dedicated exception instead of using a generic one.(ƒä•øÿÿÿÿ8¢“™ô.
+M
+java:S3740²"/Provide the parametrized type for this generic.(é¨Ê¬8²‰™ô.
+w
+java:S2293ï"YReplace the type specification in this constructor call with the diamond operator ("<>").(ËÍÏü8ÎË‹™ô.
+h
+java:S3252å"EUse static access with "com.alibaba.fastjson.JSON" for "parseObject".(ÒÙŠÃûÿÿÿÿ8¢“™ô.
+R
+java:S1066ö"/Merge this if statement with the enclosing one.(Õ¸æ—ùÿÿÿÿ8ÎË‹™ô.
+v
+java:S2293|"YReplace the type specification in this constructor call with the diamond operator ("<>").(¬É’8ÓÇíó.
+‘
+java:S1130"nRemove the declaration of thrown exception 'java.io.IOException' which is a subclass of 'java.lang.Exception'.(ÓÑÔúÿÿÿÿ8’¡‘™ô.
+V	java:S106µ"9Replace this use of System.out or System.err by a logger.(ıí¹Í8ïô”™ô.
+[	java:S106©"9Replace this use of System.out or System.err by a logger.(£ß¥¸ÿÿÿÿÿ8Æ‡†™ô.
+Y
+java:S1854”";Remove this useless assignment to local variable "result1".(éÿ€8’¡‘™ô.
+w
+java:S2293²"YReplace the type specification in this constructor call with the diamond operator ("<>").(é¨Ê¬8Æ‡†™ô.
+Y	java:S125€"<This block of commented-out lines of code should be removed.(áö8ïô”™ô.
+R
+java:S3740¡"/Provide the parametrized type for this generic.(Ãõïüÿÿÿÿ8¢“™ô.
+h
+java:S1192”"JDefine a constant instead of duplicating this literal "loginName" 9 times.(±ÏÔŒ8¢“™ô.
+^	java:S125¤"<This block of commented-out lines of code should be removed.(İğÑüÿÿÿÿ8ïô”™ô.
+X	java:S125\"<This block of commented-out lines of code should be removed.(ò½é8Æ‡†™ô.
+Q
+java:S3740E"/Provide the parametrized type for this generic.(‹Š´˜ùÿÿÿÿ8ÂŒ©íó.
+R
+java:S3740°"/Provide the parametrized type for this generic.(ıÃşÇúÿÿÿÿ8Æ‡†™ô.
+L
+java:S3740H"/Provide the parametrized type for this generic.(é¨Ê¬8Æ‡†™ô.
+R
+java:S3740¦"/Provide the parametrized type for this generic.(•Ë‡ÿÿÿÿÿ8¢“™ô.
+M
+java:S3740®"/Provide the parametrized type for this generic.(â¾è8ïô”™ô.
+j
+java:S1192•"GDefine a constant instead of duplicating this literal "passwd" 9 times.(Ó€ÑÅûÿÿÿÿ8òøÉíó.
+^
+java:S1128""CRemove this unused import 'com.newland.boss.cloud.web.util.DbUtil'.(µ©ßúÿÿÿÿ
+|
+java:S2293ï"YReplace the type specification in this constructor call with the diamond operator ("<>").(É§æúÿÿÿÿ8œµ™ô.
+—
+java:S1130ì"yRemove the declaration of thrown exception 'java.lang.InterruptedException' which is a subclass of 'java.lang.Exception'.(íİˆõ8’¡‘™ô.
+M
+java:S3740™"/Provide the parametrized type for this generic.(ÿÎ™Ä8»‹ˆ™ô.
+R
+java:S3740"/Provide the parametrized type for this generic.(‰¨…üüÿÿÿÿ8’¡‘™ô.
+Q
+java:S3740{"/Provide the parametrized type for this generic.(ıÃşÇúÿÿÿÿ8Æ‡†™ô.
+Q
+java:S3740F"/Provide the parametrized type for this generic.(ıÃşÇúÿÿÿÿ8Û°¿™ô.
+u
+java:S3776ë"RRefactor this method to reduce its Cognitive Complexity from 21 to the 15 allowed.(ÛùÍ©ùÿÿÿÿ8’¡‘™ô.
+M
+java:S3740ù"/Provide the parametrized type for this generic.(¸ş·”8Æ‡†™ô.
+L
+java:S3740ê"/Provide the parametrized type for this generic.(ú¥¹98ƒÀŠ™ô.
+w
+java:S2293ú"YReplace the type specification in this constructor call with the diamond operator ("<>").(Äµ„…8Æ‡†™ô.
+T
+java:S2696ç"6Make the enclosing method "static" or remove this set.(’—ó8Æ‡†™ô.
+R
+java:S3740Ô"/Provide the parametrized type for this generic.(¹Ùã¦øÿÿÿÿ8¢“™ô.
+Z	java:S106k"9Replace this use of System.out or System.err by a logger.(„“™¾ıÿÿÿÿ8±÷‡™ô.
+Z
+java:S1854¼"7Remove this useless assignment to local variable "arr".(‘ÑÜ¯şÿÿÿÿ8¾Ï’™ô.
+R
+java:S3740ï"/Provide the parametrized type for this generic.(É§æúÿÿÿÿ8œµ™ô.
+[	java:S106¹"9Replace this use of System.out or System.err by a logger.(¢õ¶Öùÿÿÿÿ8¾Ï’™ô.
+M
+java:S3740ø"/Provide the parametrized type for this generic.(ƒê¤‡8¢“™ô.
+
+java:S1130ã"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(ƒä•øÿÿÿÿ8¢“™ô.
+f
+java:S1854°"CRemove this useless assignment to local variable "itemsForappname".(ıÃşÇúÿÿÿÿ8Æ‡†™ô.
+“
+java:S1130¥"pRemove the declaration of thrown exception 'java.sql.SQLException' which is a subclass of 'java.lang.Exception'.(’Á¹’şÿÿÿÿ8²‰™ô.
+L
+java:S3740û"/Provide the parametrized type for this generic.(ìÆo8¢“™ô.
+M
+java:S3740¦"/Provide the parametrized type for this generic.(òÁŞï8¢“™ô.
+R
+java:S3740¹"/Provide the parametrized type for this generic.(É¢®Œùÿÿÿÿ8…”™ô.
+R
+java:S3740"/Provide the parametrized type for this generic.(‰¨…üüÿÿÿÿ8’¡‘™ô.
+R
+java:S3740†"/Provide the parametrized type for this generic.(ˆŸóøÿÿÿÿ8…”™ô.
+w
+java:S2293±"YReplace the type specification in this constructor call with the diamond operator ("<>").(¬É’8òøÉíó.
+[
+java:S1481z"9Remove this unused "myFinalResultMapList" local variable.(‹Š´˜ùÿÿÿÿ8×¹¼ô.
+|
+java:S2293Ü"YReplace the type specification in this constructor call with the diamond operator ("<>").(¦êÎùÿÿÿÿ8¾Ï’™ô.
+Y
+java:S2696æ"6Make the enclosing method "static" or remove this set.(ÆÆûÚûÿÿÿÿ8¢“™ô.
+M
+java:S3740Õ"/Provide the parametrized type for this generic.(¸ş·”8Æ‡†™ô.
+j
+java:S1854E"HRemove this useless assignment to local variable "myFinalResultMapList".(‹Š´˜ùÿÿÿÿ8ÂŒ©íó.
+R
+java:S3740ª"/Provide the parametrized type for this generic.(ë¯øùÿÿÿÿ8¢“™ô.
+{
+java:S2293{"YReplace the type specification in this constructor call with the diamond operator ("<>").(ıÃşÇúÿÿÿÿ8ÓÇíó.
+v
+java:S2293®"YReplace the type specification in this constructor call with the diamond operator ("<>").(Ä¯½8²‰™ô.
+|
+java:S2293°"YReplace the type specification in this constructor call with the diamond operator ("<>").(ıÃşÇúÿÿÿÿ8òøÉíó.
+L
+java:S3740f"/Provide the parametrized type for this generic.(ÿÎ™Ä8Æ‡†™ô.
+M
+java:S3740»"/Provide the parametrized type for this generic.(â¾è8¾Ï’™ô.
+]
+java:S1854"@Remove this useless assignment to local variable "instancename".(ç¨Ö>8ÎË‹™ô.
+“
+java:S1130"pRemove the declaration of thrown exception 'java.sql.SQLException' which is a subclass of 'java.lang.Exception'.(ÓÑÔúÿÿÿÿ8’¡‘™ô.
+]	java:S125s"<This block of commented-out lines of code should be removed.(Å—¿ªúÿÿÿÿ8Æ‡†™ô.
+u
+java:S3776ã"RRefactor this method to reduce its Cognitive Complexity from 57 to the 15 allowed.(ƒä•øÿÿÿÿ8¢“™ô.
+|
+java:S2293ü"YReplace the type specification in this constructor call with the diamond operator ("<>").(‘ÑÜ¯şÿÿÿÿ8ˆÒ”™ô.
+M
+java:S3740‡"/Provide the parametrized type for this generic.(¬ã—±8¢“™ô.
+M
+java:S3740ù"/Provide the parametrized type for this generic.(¸ş·”8Æ‡†™ô.
+d
+java:S1192Ğ"FDefine a constant instead of duplicating this literal "items" 4 times.(äÍè8ƒÀŠ™ô.
+p
+java:S3776ø"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(ƒê¤‡8¢“™ô.
+L
+java:S1481Ñ".Remove this unused "resultTmp" local variable.(å›œÆ8ƒÀŠ™ô.
+R
+java:S3740ƒ"/Provide the parametrized type for this generic.(úıÿÿÿÿ8ÎË‹™ô.
+R
+java:S3740Ä"/Provide the parametrized type for this generic.(ˆŸóøÿÿÿÿ8…”™ô.
+l
+java:S44888"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(¾š²Õşÿÿÿÿ8Æ‡†™ô.
+g
+java:S1192Ö"IDefine a constant instead of duplicating this literal "myresult" 3 times.(ë Ş«8¾Ï’™ô.
+{
+java:S2293F"YReplace the type specification in this constructor call with the diamond operator ("<>").(ıÃşÇúÿÿÿÿ8Û°¿™ô.
+[	java:S106È"9Replace this use of System.out or System.err by a logger.(¨ß×Ãøÿÿÿÿ8œç‰™ô.
+l
+java:S1192ë"IDefine a constant instead of duplicating this literal "hostName" 3 times.(ë¢’¼ûÿÿÿÿ8¾Ï’™ô.
+D
+java:S1128"/Remove this unused import 'java.sql.ResultSet'.(ˆóÚw
+w
+java:S2293À"YReplace the type specification in this constructor call with the diamond operator ("<>").(‡ú‡‚8¢“™ô.
+]	java:S125="<This block of commented-out lines of code should be removed.(Å—¿ªúÿÿÿÿ8Æ‡†™ô.
+w
+java:S2293ó"YReplace the type specification in this constructor call with the diamond operator ("<>").(â¾è8¾Ï’™ô.
+R
+java:S3740Ú"/Provide the parametrized type for this generic.(øğüçùÿÿÿÿ8¢“™ô.
+^	java:S125Ã"<This block of commented-out lines of code should be removed.(ø­¡¶ıÿÿÿÿ8üÏ•™ô.
+R
+java:S3740¯"/Provide the parametrized type for this generic.(‹Š´˜ùÿÿÿÿ8òøÉíó.
+w
+java:S2293Ö"YReplace the type specification in this constructor call with the diamond operator ("<>").(Äµ„…8Æ‡†™ô.
+R
+java:S3740€"/Provide the parametrized type for this generic.(¨Ùù²ùÿÿÿÿ8’¡‘™ô.
+M
+java:S3740¤"/Provide the parametrized type for this generic.(ıÄÛè8¢“™ô.
+[	java:S106â"9Replace this use of System.out or System.err by a logger.(„“™¾ıÿÿÿÿ8ƒÀŠ™ô.
+|
+java:S2293•"YReplace the type specification in this constructor call with the diamond operator ("<>").(¦êÎùÿÿÿÿ8ïô”™ô.
+M
+java:S3740Õ"/Provide the parametrized type for this generic.(¸ş·”8Æ‡†™ô.
+w
+java:S2293Õ"YReplace the type specification in this constructor call with the diamond operator ("<>").(¸ş·”8¢“™ô.
+Y	java:S125Ú"<This block of commented-out lines of code should be removed.(¹ù®€8üÏ•™ô.
+R
+java:S3740¦"/Provide the parametrized type for this generic.(ˆŸóøÿÿÿÿ8…”™ô.
+l
+java:S1192—"IDefine a constant instead of duplicating this literal "hostname" 9 times.(ÜŞ‡úşÿÿÿÿ8Æ‡†™ô.
+R
+java:S3740"/Provide the parametrized type for this generic.(ˆŸóøÿÿÿÿ8¢“™ô.
+R
+java:S3740ã"/Provide the parametrized type for this generic.(ƒä•øÿÿÿÿ8¢“™ô.
+V	java:S106ú"9Replace this use of System.out or System.err by a logger.(­·î8ˆ¿”™ô.
+R
+java:S3740Š"/Provide the parametrized type for this generic.(É¢®Œùÿÿÿÿ8…”™ô.
+h
+java:S1192§"JDefine a constant instead of duplicating this literal "errorCode" 4 times.(¬ß˜’8’¡‘™ô.
+Y	java:S125ß"<This block of commented-out lines of code should be removed.(ÏÛìü8ƒÀŠ™ô.
+|
+java:S2293Î"YReplace the type specification in this constructor call with the diamond operator ("<>").(¦êÎùÿÿÿÿ8üÏ•™ô.
+R
+java:S3740ï"/Provide the parametrized type for this generic.(É§æúÿÿÿÿ8œµ™ô.
+•
+java:S1130p"xRemove the declaration of thrown exception 'com.jcraft.jsch.JSchException' which is a subclass of 'java.lang.Exception'.(êÇÖ8Ø‡™ô.
+V
+java:S1481F"4Remove this unused "itemsForappname" local variable.(ıÃşÇúÿÿÿÿ8Û°¿™ô.
+
+java:S1319"kThe type of the "map" object should be an interface such as "Map" rather than the implementation "HashMap".(‰¨…üüÿÿÿÿ8’¡‘™ô.
+m
+java:S1192¾"JDefine a constant instead of duplicating this literal "instances" 7 times.(»õ’Èşÿÿÿÿ8¢“™ô.
+[
+java:S1854Ñ"=Remove this useless assignment to local variable "resultTmp".(å›œÆ8ƒÀŠ™ô.
+^	java:S125Ë"<This block of commented-out lines of code should be removed.(á“µãûÿÿÿÿ8¢“™ô.
+R
+java:S3740ğ"/Provide the parametrized type for this generic.(ßµÓŞûÿÿÿÿ8œµ™ô.
+u
+java:S1192ı"RDefine a constant instead of duplicating this literal "./DeployAgentExt " 3 times.(ìêÕ¹şÿÿÿÿ8—¯—™ô.
+Y	java:S125¼"<This block of commented-out lines of code should be removed.(Èª—¬8²‰™ô.
+M
+java:S3740¦"/Provide the parametrized type for this generic.(òÁŞï8¢“™ô.
+R
+java:S3740ë"/Provide the parametrized type for this generic.(ÛùÍ©ùÿÿÿÿ8’¡‘™ô.
+^	java:S125Õ"<This block of commented-out lines of code should be removed.(˜’ªÖúÿÿÿÿ8ƒÀŠ™ô.
+K
+java:S3740D"/Provide the parametrized type for this generic.(Ä¯½8ÂŒ©íó.
+N
+java:S1481"1Remove this unused "instancename" local variable.(ç¨Ö>8ÎË‹™ô.
+M
+java:S3740£"/Provide the parametrized type for this generic.(ƒß8’¡‘™ô.
+d
+java:S1192Ÿ"FDefine a constant instead of duplicating this literal "error" 4 times.(ÕÒğë8¢“™ô.
+j
+java:S1854z"HRemove this useless assignment to local variable "myFinalResultMapList".(‹Š´˜ùÿÿÿÿ8»‹ˆ™ô.
+Q
+java:S3740z"/Provide the parametrized type for this generic.(‹Š´˜ùÿÿÿÿ8ÓÇíó.
+^	java:S125§"<This block of commented-out lines of code should be removed.(ÛåäŸúÿÿÿÿ8²‰™ô.
+|
+java:S2293¯"YReplace the type specification in this constructor call with the diamond operator ("<>").(‹Š´˜ùÿÿÿÿ8òøÉíó.
+K
+java:S3740y"/Provide the parametrized type for this generic.(Ä¯½8»‹ˆ™ô.
+M
+java:S1066»"/Merge this if statement with the enclosing one.(¡®8¢“™ô.
+g
+java:S3008)"QRename this field "LOGGER" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ûßñ©
+R
+java:S3740Ÿ"/Provide the parametrized type for this generic.(³Şñ·øÿÿÿÿ8¢“™ô.
+M
+java:S3740Ã"/Provide the parametrized type for this generic.(ÆĞŒâ8¢“™ô.
+c
+java:S1128"HRemove this unused import 'com.newland.boss.cloud.web.config.AppConfig'.(ò¡İ¡şÿÿÿÿ
+u
+java:S3776Ÿ"RRefactor this method to reduce its Cognitive Complexity from 35 to the 15 allowed.(³Şñ·øÿÿÿÿ8¢“™ô.
+L
+java:S3740®"/Provide the parametrized type for this generic.(Ä¯½8²‰™ô.
+M
+java:S3740ï"/Provide the parametrized type for this generic.(ËÍÏü8ÎË‹™ô.
+X	java:S1252"<This block of commented-out lines of code should be removed.(É¿àæ8Æ‡†™ô.
+V
+java:S1481{"4Remove this unused "itemsForappname" local variable.(ıÃşÇúÿÿÿÿ8¼‹ˆ™ô.
+R
+java:S3740ë"/Provide the parametrized type for this generic.(ÛùÍ©ùÿÿÿÿ8’¡‘™ô.
+Y	java:S125Ê"<This block of commented-out lines of code should be removed.(Ãç•§8¢“™ô.
+Q
+java:S3740{"/Provide the parametrized type for this generic.(ıÃşÇúÿÿÿÿ8Æ‡†™ô.
+R
+java:S3740ş"/Provide the parametrized type for this generic.(øğüçùÿÿÿÿ8¢“™ô.
+L
+java:S3740×"/Provide the parametrized type for this generic.(ìÆo8¢“™ô.
+I
+java:S1128"3Remove this unused import 'com.jcraft.jsch.Logger'.(²›¢Ò
+–
+java:S1130ì"xRemove the declaration of thrown exception 'com.jcraft.jsch.JSchException' which is a subclass of 'java.lang.Exception'.(íİˆõ8’¡‘™ô.
+\
+java:S1155×">Use isEmpty() to check whether the collection is empty or not.(›Æ•§8ƒÀŠ™ô.
+R
+java:S3740ë"/Provide the parametrized type for this generic.(ÛùÍ©ùÿÿÿÿ8’¡‘™ô.
+L
+java:S3740H"/Provide the parametrized type for this generic.(é¨Ê¬8Æ‡†™ô.
+R
+java:S3740´"/Provide the parametrized type for this generic.(İõ÷şÿÿÿÿ8¢“™ô.
+R
+java:S3740µ"/Provide the parametrized type for this generic.(Í›ï›ıÿÿÿÿ8Æ‡†™ô.
+R
+java:S3740‘"/Provide the parametrized type for this generic.(à§ù«üÿÿÿÿ8’¡‘™ô.
+‹
+java:S1130ê"nRemove the declaration of thrown exception 'java.sql.SQLException', as it cannot be thrown from method's body.(ú¥¹98ƒÀŠ™ô.
+Œ
+java:S1130ì"nRemove the declaration of thrown exception 'java.io.IOException' which is a subclass of 'java.lang.Exception'.(íİˆõ8’¡‘™ô.
+
+java:S1130ì"pRemove the declaration of thrown exception 'java.sql.SQLException' which is a subclass of 'java.lang.Exception'.(íİˆõ8’¡‘™ô.
+R
+java:S3740›"/Provide the parametrized type for this generic.(É¢®Œùÿÿÿÿ8…”™ô.
+R
+java:S3740¬"/Provide the parametrized type for this generic.(É¢®Œùÿÿÿÿ8…”™ô.
+L
+java:S3740ÿ"/Provide the parametrized type for this generic.(öƒ¡/8ÎË‹™ô.
+Y	java:S125œ"<This block of commented-out lines of code should be removed.(Öü†8Æ‡†™ô.
+R
+java:S3740¯"/Provide the parametrized type for this generic.(‹Š´˜ùÿÿÿÿ8òøÉíó.
+‘
+java:S1130¥"nRemove the declaration of thrown exception 'java.io.IOException' which is a subclass of 'java.lang.Exception'.(’Á¹’şÿÿÿÿ8²‰™ô.
+w
+java:S2293ƒ"YReplace the type specification in this constructor call with the diamond operator ("<>").(› «ÿ8…”™ô.
+M
+java:S3740Ç"/Provide the parametrized type for this generic.(ƒß8¾Ï’™ô.
+M
+java:S3740ó"/Provide the parametrized type for this generic.(â¾è8¾Ï’™ô.
+R
+java:S3740ğ"/Provide the parametrized type for this generic.(Í›ï›ıÿÿÿÿ8Æ‡†™ô.
+[	java:S106Ÿ"9Replace this use of System.out or System.err by a logger.(„“™¾ıÿÿÿÿ8²‰™ô.
+V	java:S106Ä"9Replace this use of System.out or System.err by a logger.(¸Òé³8œç‰™ô.
+M
+java:S3740ï"/Provide the parametrized type for this generic.(ËÍÏü8ÎË‹™ô.
+[	java:S106ñ"9Replace this use of System.out or System.err by a logger.(€š°Ğúÿÿÿÿ8¾Ï’™ô.
+M
+java:S3740‹"/Provide the parametrized type for this generic.(œóïå8ÎË‹™ô.
+R
+java:S3740Ö"/Provide the parametrized type for this generic.(É¢®Œùÿÿÿÿ8…”™ô.
+R
+java:S3740ù"/Provide the parametrized type for this generic.(ÁüÌşÿÿÿÿ8’¡‘™ô.
+j
+java:S1128"ORemove this unused import 'com.fasterxml.jackson.core.JsonProcessingException'.(ßÔïÇûÿÿÿÿ

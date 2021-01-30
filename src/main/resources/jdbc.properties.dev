@@ -1,0 +1,22 @@
+driverClassName = oracle.jdbc.OracleDriver
+
+url=jdbc:oracle:thin:@10.1.0.145:1521:billing
+username=rmc
+password=K%qfJr#e$2
+
+initialSize = 150
+maxActive = 250
+minIdle = 10
+maxWait = 60000
+removeAbandoned = true
+removeAbandonedTimeout = 180
+timeBetweenEvictionRunsMillis = 60000
+minEvictableIdleTimeMillis = 25200000
+validationQuery = SELECT 1 FROM DUAL
+testWhileIdle = true
+testOnBorrow = false
+testOnReturn = false
+#poolPreparedStatements = true
+#maxPoolPreparedStatementPerConnectionSize = 50
+connectionProperties = config.decrypt=false
+filters = stat

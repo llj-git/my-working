@@ -1,0 +1,9 @@
+@CHARSET "UTF-8";
+
+div.loading {
+	background: blue;
+	height: 5px;
+	position: fixed;
+	top: 0;
+	z-index: 99999;
+}

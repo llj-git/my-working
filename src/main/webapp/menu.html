@@ -1,0 +1,140 @@
+<html ng-app="zkManage">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="pragma" content="no-cache">
+<script type="text/javascript"
+	src="resources/skeleton/js/jquery-1.11.3.min.js"></script>
+<link rel="stylesheet" type="text/css"
+	href="resources/skeleton/css/amazeui.min.css" />
+<link rel="stylesheet" type="text/css"
+	href="resources/skeleton/css/admin.css" />
+<link rel="stylesheet" type="text/css"
+	href="resources/skeleton/zTree/css/zTreeStyle/zTreeStyle.css" />
+<script type="text/javascript"
+	src="resources/skeleton/zTree/js/jquery.ztree.all.min.js"></script>
+<script type="text/javascript"
+	src="resources/skeleton/zTree/js/jquery.ztree.core.min.js"></script>
+<script type="text/javascript"
+	src="resources/skeleton/zTree/js/jquery.ztree.exhide.min.js"></script>
+<script type="text/javascript"
+	src="resources/skeleton/zTree/js/jquery.ztree.exedit.min.js"></script>
+<!--[if gte IE 9]><!-->
+<script src="resources/skeleton/js/angular.min-1.6.5.js"></script>
+<!--<![endif]-->
+<!--[if lt IE 9]>
+<script src="resources/skeleton/js/modernizr.js"></script>
+<script src="resources/skeleton/js/amazeui.ie8polyfill.min.js"></script>
+<script src="resources/skeleton/js/angular.min-1.2.32.js"></script>
+<style>
+#contentFrame{
+	height:500px;
+}
+#admin-offcanvas{
+	overflow-y:hidden;
+}
+</style>
+<![endif]-->
+<script type="text/javascript"
+	src="resources/skeleton/js/amazeui.min.js"></script>
+<script src="resources/biz/controller/catheList.js"></script>
+<style>
+div, body, html {
+	margin: 0;
+	padding: 0;
+}
+
+.main {
+	width:100%;
+	height:100%;
+}
+
+.menu {
+	display: inline-block;
+	width:20%;
+	height:100%;
+}
+
+#content{
+	position:absolute;
+	display: inline-block;
+	width:79%;
+	margin:5px;
+	height:100%;
+	min-width:700px;
+}
+
+.header{
+	height:40px;
+	font-size:25px;
+	background-color: #0E90D2;
+    border-color: #0b6fa2;
+    color: #eee;
+    padding-left:24px;
+}
+</style>
+
+<script type="text/javascript">
+/* 	var path = 'http://'+window.location.host+'/rmc/pages/configmanage/zk_tool_new.jsp';
+	$('#zkTool').attr('href',path);  */
+	
+	//url
+	var host = 'http://' + window.location.host;
+	$.post("rest/getLoginUser", {}, function(data, status) {
+	if (data == "false") {
+		$(window).attr('location', host + '/bdsWeb/login.html');
+	} 
+});
+</script> 
+</head>
+<body ng-controller="zkManageController">
+<div class="am-cf main">
+  <!-- sidebar start -->
+  <div class="admin-sidebar" id="admin-offcanvas">
+    <div class="admin-offcanvas-bar">
+	   <div class="header">
+			<strong>导航</strong>
+		</div>
+      <ul class="am-list admin-sidebar-list"> 
+        <li class="admin-parent">
+          <a class="am-cf" data-am-collapse="{target: '#collapse-nav-zk'}"><span class="am-icon-file"></span> 运维管理 <span class="am-icon-angle-right am-fr am-margin-right"></span></a>
+          <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav-zk">
+            <li><a href="app_service.html" target="contentFrame" class="am-cf"><span class="am-icon-th"></span> 服务状态</a></li>
+            <li><a href="app_view.html" target="contentFrame"><span class="am-icon-th"></span> 应用视图</a></li>
+<!--             <li><a href="bds_switch.html" target="contentFrame"><span class="am-icon-puzzle-piece"></span> bds主备切换</a></li> -->
+            <li><a href="zkWeb.html" target="contentFrame"><span class="am-icon-calendar"></span> zk管理工具</a></li>
+          <!--   <li><a href="" target="contentFrame" class="am-cf" id="zkTool"><span class="am-icon-table"></span> zk统一配置</a></li> -->
+            <li><a href="dataguard_switch.html" target="contentFrame"><span class="am-icon-exchange"></span> 主备库切换</a></li>
+            <li><a href="db_dml_query.html" target="contentFrame" class="am-cf"><span class="am-icon-search"></span> 余额库查询</a></li>
+            <li><a href="db_dml.html" target="contentFrame" class="am-cf"><span class="am-icon-pencil-square-o"></span> 余额库维护</a></li>
+<!--             <li><a href="metrics/metricsLine.html" target="contentFrame" class="am-cf"><span class="am-icon-table"></span> 性能图表</a></li>
+ -->            <li><a href="query_sql.html" target="contentFrame" class="am-cf"><span class="am-icon-pencil-square-o"></span> 用户资料维护</a></li>
+            <li><a href="query_sql_compare2Db.html" target="contentFrame" class="am-cf"><span class="am-icon-search"></span> 用户资料查询</a></li>
+<!--             <li><a href="useTimeCharts.html" target="contentFrame" class="am-cf"><span class="am-icon-bar-chart"></span> 性能图表</a></li> -->
+          </ul>
+        </li>
+        <li class="admin-parent">
+          <a class="am-cf" data-am-collapse="{target: '#collapse-nav-cache'}"><span class="am-icon-file"></span> Cache管理 <span class="am-icon-angle-right am-fr am-margin-right"></span></a>
+          <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav-cache">
+          	<!--<li><a href="serviceIp.html" target="contentFrame" class="am-cf"><span class="am-icon-table"></span>ignite服务端口</a></li>-->
+            <li><a href="cacheList.jsp" target="contentFrame" class="am-cf"><span class="am-icon-table"></span> 缓存数据pk查找</a></li>
+<!--             <li><a href="cacheSqlQry2.html" target="contentFrame" class="am-cf"><span class="am-icon-table"></span> 缓存数据sql查找</a></li>
+ -->            <li><a href="igniteMonitor.jsp" target="contentFrame"><span class="am-icon-calendar"></span>监控看板</a></li>
+            <!--<li><a href="dataGridMonitor.html" target="contentFrame"><span class="am-icon-calendar"></span>数据网格在线监控看板</a></li>-->
+            <li><a href="nodeList.jsp" target="contentFrame"><span class="am-icon-calendar"></span>节点明细信息</a></li>
+            <li><a href="cacheMetrics.jsp" target="contentFrame"><span class="am-icon-calendar"></span>缓存指标明细</a></li>
+            <li><a href="cacheConfigInfo.jsp" target="contentFrame"><span class="am-icon-calendar"></span>缓存配置信息</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  
+  <div id="content">
+        <iframe id="contentFrame" width="100%" scrolling="auto" height="100%" frameborder="0" name="contentFrame" allowtransparency="true" src="">       
+        </iframe>           
+  </div>
+  </div> 
+ 
+</body>
+</html>

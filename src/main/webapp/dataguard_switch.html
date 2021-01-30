@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html ng-app="dataguard_switch">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="pragma" content="no-cache">
+<script type="text/javascript"
+	src="resources/skeleton/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript"
+	src="resources/skeleton/js/AlertMessage-1.3.js"></script>
+<link rel="stylesheet" type="text/css"
+	href="resources/skeleton/css/amazeui.min.css" />
+<!--[if gte IE 9]><!-->
+<script src="resources/skeleton/js/angular.min-1.6.5.js"></script>
+<!--<![endif]-->
+<!--[if lt IE 9]>
+<script src="resources/skeleton/js/modernizr.js "></script>
+<script src="resources/skeleton/js/amazeui.ie8polyfill.min.js"></script>
+<script src="resources/skeleton/js/angular.min-1.2.32.js"></script>
+<![endif]-->
+<script type="text/javascript"
+	src="resources/skeleton/js/amazeui.min.js"></script>
+<style>
+th {
+	background-color: #0E90D2;
+	color: #FFFFFF;
+}
+
+td {
+	word-break: break-all;
+	word-wrap: break-word;
+}
+</style>
+<!--[if lt IE 9]>
+<style>
+body{
+	font-size:16px;
+}
+</style>
+<![endif]-->
+</head>
+<body ng-controller="dataGuardController"
+	style="background-color: #ECECFF;" class="js-modal-open">
+	<div class="am-tabs am-margin" data-am-tabs
+		style="border-style: solid; border-width: 1px; border-color: #E0E0E0;">
+		<div style="padding: 10px; background-color: #FFFFFF;">
+			<table style="text-align: center;"
+				class="am-table am-table-bordered am-table-striped am-table-hover">
+				<thead>
+					<tr>
+						<th>&nbsp;&nbsp;</th>
+						<th style="text-align: center;">数据库名</th>
+						<th style="text-align: center;">主备库标识</th>
+						<th style="text-align: center;">读写</th>
+						<th style="text-align: center;">主机名</th>
+						<th style="text-align: center;">IP</th>
+						<th style="text-align: center;">密码库名</th>
+						<th style="text-align: center;">备注</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="dataGuard in bdsList">
+						<td class="am-text-middle"><input type="checkbox" name="tagName"  value="{{dataGuard}}"/></td>			
+						<td class="am-text-middle">{{ dataGuard.dbName }}</td>
+						
+						<!-- 转化对应字段 ——isMain -->
+						<td class="am-text-middle" ng-if="dataGuard.isMain==0">主库</td>
+						<td class="am-text-middle" ng-if="dataGuard.isMain==1">备库1</td>
+						<td class="am-text-middle" ng-if="dataGuard.isMain==2">备库2</td>
+						
+						<!-- 转化对应字段 ——isWrite -->
+						<td class="am-text-middle" ng-if="dataGuard.isWrite==0">读</td>
+						<td class="am-text-middle" ng-if="dataGuard.isWrite==1">写</td>
+						<td class="am-text-middle" ng-if="dataGuard.isWrite==2">不可用</td>
+						
+						<td class="am-text-middle">{{ dataGuard.hostName }}</td>
+						<td class="am-text-middle">{{ dataGuard.ip }}</td>
+						<td class="am-text-middle">{{ dataGuard.pname }}</td>
+						<td class="am-text-middle">{{ dataGuard.commons }}</td>
+					</tr>
+				</tbody>
+			</table>
+			<div>
+				<button type="button" class="am-btn am-btn-primary"
+					ng-click='dataGuardSwitch()' id="switchBtn">主备库切换</button>
+				<button type="button" class="am-btn am-btn-primary"
+					ng-click='refreshDataGuard()'>刷新</button>
+			</div>
+		</div>
+	</div>
+	<div class="am-modal am-modal-alert" tabindex="-1" id="my-modal">
+		<div class="am-modal-dialog" style="border-radius: 18px;">
+			<div class="am-modal-hd"
+				style="background-color: #FF5151; color: #FFFFFF; border-top-left-radius: 16px; border-top-right-radius: 16px;">{{alertTitle}}</div>
+			<div class="am-modal-bd"
+				style="background-color: #FFFFFF; min-height: 100px; padding-top: 35px; font-size: 105%;">{{alertInfo}}</div>
+			<div class="am-modal-footer"
+				style="border-bottom-left-radius: 16px; border-bottom-right-radius: 16px;">
+				<span class="am-modal-btn">确定</span>
+ 			</div>
+		</div>
+	</div>
+
+	<div class="am-modal am-modal-confirm" tabindex="-1" id="my-confirm">
+		<div class="am-modal-dialog" style="border-radius: 18px;">
+			<div class="am-modal-hd"
+				style="background-color: #1C86EE; color: #FFFFFF; border-top-left-radius: 16px; border-top-right-radius: 16px;">提示</div>
+			<div class="am-modal-bd"
+				style="background-color: #FFFFFF; min-height: 100px; padding-top: 35px; font-size: 105%; white-space: pre-line;">{{confirmInfo}}</div>
+			<div class="am-modal-footer"
+				style="border-bottom-left-radius: 16px; border-bottom-right-radius: 16px;">
+      			<span class="am-modal-btn" data-am-modal-confirm>确定</span>
+      			<span class="am-modal-btn" data-am-modal-cancel>取消</span>
+			</div>
+		</div>
+	</div>
+	<script src="resources/biz/controller/dataGuardController.js"></script>
+</body>
+</html>

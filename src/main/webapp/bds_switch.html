@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html ng-app="bds_switch">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="pragma" content="no-cache">
+<script type="text/javascript"
+	src="resources/skeleton/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript"
+	src="resources/skeleton/js/AlertMessage-1.3.js"></script>
+<link rel="stylesheet" type="text/css"
+	href="resources/skeleton/css/amazeui.min.css" />
+<!--[if gte IE 9]><!-->
+<script src="resources/skeleton/js/angular.min-1.6.5.js"></script>
+<!--<![endif]-->
+<!--[if lt IE 9]>
+<script src="resources/skeleton/js/modernizr.js "></script>
+<script src="resources/skeleton/js/amazeui.ie8polyfill.min.js"></script>
+<script src="resources/skeleton/js/angular.min-1.2.32.js"></script>
+<![endif]-->
+<script type="text/javascript"
+	src="resources/skeleton/js/amazeui.min.js"></script>
+<style>
+th {
+	background-color: #0099FF;
+	color: #FFFFFF;
+}
+
+td {
+	word-break: break-all;
+	word-wrap: break-word;
+}
+</style>
+<!--[if lt IE 9]>
+<style>
+body{
+	font-size:16px;
+}
+</style>
+<![endif]-->
+</head>
+<body ng-controller="bdsSwitchController"
+	style="background-color: #ECECFF;" class="js-modal-open">
+	<div class="am-tabs am-margin" data-am-tabs
+		style="border-style: solid; border-width: 1px; border-color: #E0E0E0;">
+		<div style="padding: 10px; background-color: #FFFFFF;">
+			<table
+				class="am-table am-table-bordered am-table-striped am-table-hover">
+				<thead>
+					<tr>
+						<th style="white-space: nowrap">数据库名</th>
+						<th>主库</th>
+						<th>备库1</th>
+						<th>备库2</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="bdsGroup in bdsList">
+						<td class="am-text-middle">{{ bdsGroup.dbSource }}</td>
+						<td class="am-text-middle" style="white-space: nowrap">
+							<div class="am-u-sm-9">
+								<div>
+									<div style="float: left">
+										<label class="am-checkbox"> 
+											<input type="checkbox" ng-model="$parent.bdsList[$index].branchDB0Selected" />{{bdsGroup.ipMain }}
+										</label>
+									</div>
+									<div style="float: left" ng-if="bdsGroup.currServiceType=='0'">
+										<img src="resources/biz/images/main.png">
+									</div>
+								</div>
+								<div class="am-u-sm-11 am-padding-left-0 am-padding-right-0">
+									<ul style="padding-left:10px">
+										<li ng-repeat="bds in bdsGroup.branchDB0List track by $index">{{bds.nodeName}} <b style="color: green">{{bds.state}}</b></li>
+									</ul>
+								</div>
+							</div>
+						</td>
+						<td class="am-text-middle" style="white-space: nowrap">
+							<div class="am-u-sm-9">
+								<div>
+									<div style="float: left">
+										<label class="am-checkbox"> 
+											<input type="checkbox" ng-model="$parent.bdsList[$index].branchDB1Selected" />{{bdsGroup.ipBak1 }}
+										</label>
+									</div>
+									<div style="float: left" ng-if="bdsGroup.currServiceType=='1'">
+										<img src="resources/biz/images/main.png">
+									</div>
+								</div>
+								<div class="am-u-sm-11 am-padding-left-0 am-padding-right-0">
+									<ul style="padding-left:10px">
+										<li ng-repeat="bds in bdsGroup.branchDB1List track by $index">{{bds.nodeName}} <b style="color: green">{{bds.state}}</b></li>
+									</ul>
+								</div>
+							</div>
+						</td>
+						<td style="white-space: nowrap">
+							<div class="am-u-sm-9">
+								<div>
+									<div style="float: left">
+										<label class="am-checkbox"> 
+											<input type="checkbox" ng-model="$parent.bdsList[$index].branchDB2Selected" />{{bdsGroup.ipBak2 }}
+										</label>
+									</div>
+									<div style="float: left" ng-if="bdsGroup.currServiceType=='2'">
+										<img src="resources/biz/images/main.png">
+									</div>
+								</div>
+								<div class="am-u-sm-11 am-padding-left-0 am-padding-right-0">
+									<ul style="padding-left:10px">
+										<li ng-repeat="bds in bdsGroup.branchDB2List track by $index">{{bds.nodeName}} <b style="color: green">{{bds.state}}</b></li>
+									</ul>
+								</div>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<div>
+				<button type="button" class="am-btn am-btn-primary"
+					ng-click='doBdsSwitch()'>主备切换</button>
+				<button type="button" class="am-btn am-btn-primary"
+					ng-click='refreshBds()'>刷新</button>
+			</div>
+		</div>
+	</div>
+	<div class="am-modal am-modal-alert" tabindex="-1" id="my-modal">
+		<div class="am-modal-dialog" style="border-radius: 18px;">
+			<div class="am-modal-hd"
+				style="background-color: #FF5151; color: #FFFFFF; border-top-left-radius: 16px; border-top-right-radius: 16px;">{{alertTitle}}</div>
+			<div class="am-modal-bd"
+				style="background-color: #FFFFFF; min-height: 100px; padding-top: 35px; font-size: 105%;">{{alertInfo}}</div>
+			<div class="am-modal-footer"
+				style="border-bottom-left-radius: 16px; border-bottom-right-radius: 16px;">
+				<span class="am-modal-btn">确定</span>
+			</div>
+		</div>
+	</div>
+	<script src="resources/biz/controller/bdsSwitchController.js"></script>
+</body>
+</html>

@@ -1,0 +1,310 @@
+2018-10-23 14:39:14,414 ERROR main [com.alibaba.druid.pool.DruidDataSource:898] - {dataSource-1} init error
+java.sql.SQLException: oracle.jdbc.OracleDriver
+	at com.alibaba.druid.util.JdbcUtils.createDriver(JdbcUtils.java:596)
+	at com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:815)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:1222)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:1218)
+	at com.newland.boss.cloud.web.query.util.DBPoolConnection.getConnection(DBPoolConnection.java:50)
+	at com.newland.boss.cloud.web.query.dao.MetricsDetailDao.queryTaskList(MetricsDetailDao.java:35)
+	at com.newland.boss.cloud.web.query.dao.MetricsDetailDao.main(MetricsDetailDao.java:104)
+Caused by: java.lang.ClassNotFoundException: oracle.jdbc.OracleDriver
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:366)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:355)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:354)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:425)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:308)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:358)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:191)
+	at com.alibaba.druid.util.JdbcUtils.createDriver(JdbcUtils.java:594)
+	... 6 more
+2018-10-23 14:41:54,773 ERROR main [com.alibaba.druid.pool.DruidDataSource:865] - init datasource error, url: jdbc:oracle:thin:@10.1.0.145:1521:billing145
+java.sql.SQLRecoverableException: IO 错误: The Network Adapter could not establish the connection
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:673)
+	at oracle.jdbc.driver.PhysicalConnection.<init>(PhysicalConnection.java:711)
+	at oracle.jdbc.driver.T4CConnection.<init>(T4CConnection.java:385)
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:30)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:558)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:149)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:218)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:143)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1515)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1578)
+	at com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:854)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:1222)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:1218)
+	at com.newland.boss.cloud.web.query.util.DBPoolConnection.getConnection(DBPoolConnection.java:50)
+	at com.newland.boss.cloud.web.query.dao.MetricsDetailDao.queryTaskList(MetricsDetailDao.java:35)
+	at com.newland.boss.cloud.web.query.dao.MetricsDetailDao.main(MetricsDetailDao.java:104)
+Caused by: oracle.net.ns.NetException: The Network Adapter could not establish the connection
+	at oracle.net.nt.ConnStrategy.execute(ConnStrategy.java:445)
+	at oracle.net.resolver.AddrResolution.resolveAndExecute(AddrResolution.java:464)
+	at oracle.net.ns.NSProtocol.establishConnection(NSProtocol.java:594)
+	at oracle.net.ns.NSProtocol.connect(NSProtocol.java:229)
+	at oracle.jdbc.driver.T4CConnection.connect(T4CConnection.java:1360)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:486)
+	... 15 more
+Caused by: java.net.ConnectException: Connection timed out: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:339)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:200)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:182)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:579)
+	at oracle.net.nt.TcpNTAdapter.connect(TcpNTAdapter.java:162)
+	at oracle.net.nt.ConnOption.connect(ConnOption.java:133)
+	at oracle.net.nt.ConnStrategy.execute(ConnStrategy.java:411)
+	... 20 more
+2018-10-23 14:41:54,797 ERROR main [com.alibaba.druid.pool.DruidDataSource:898] - {dataSource-1} init error
+java.sql.SQLRecoverableException: IO 错误: The Network Adapter could not establish the connection
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:673)
+	at oracle.jdbc.driver.PhysicalConnection.<init>(PhysicalConnection.java:711)
+	at oracle.jdbc.driver.T4CConnection.<init>(T4CConnection.java:385)
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:30)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:558)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:149)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:218)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:143)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1515)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1578)
+	at com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:854)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:1222)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:1218)
+	at com.newland.boss.cloud.web.query.util.DBPoolConnection.getConnection(DBPoolConnection.java:50)
+	at com.newland.boss.cloud.web.query.dao.MetricsDetailDao.queryTaskList(MetricsDetailDao.java:35)
+	at com.newland.boss.cloud.web.query.dao.MetricsDetailDao.main(MetricsDetailDao.java:104)
+Caused by: oracle.net.ns.NetException: The Network Adapter could not establish the connection
+	at oracle.net.nt.ConnStrategy.execute(ConnStrategy.java:445)
+	at oracle.net.resolver.AddrResolution.resolveAndExecute(AddrResolution.java:464)
+	at oracle.net.ns.NSProtocol.establishConnection(NSProtocol.java:594)
+	at oracle.net.ns.NSProtocol.connect(NSProtocol.java:229)
+	at oracle.jdbc.driver.T4CConnection.connect(T4CConnection.java:1360)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:486)
+	... 15 more
+Caused by: java.net.ConnectException: Connection timed out: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:339)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:200)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:182)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:579)
+	at oracle.net.nt.TcpNTAdapter.connect(TcpNTAdapter.java:162)
+	at oracle.net.nt.ConnOption.connect(ConnOption.java:133)
+	at oracle.net.nt.ConnStrategy.execute(ConnStrategy.java:411)
+	... 20 more
+2018-10-23 14:41:54,799 INFO main [com.alibaba.druid.pool.DruidDataSource:923] - {dataSource-1} inited
+2018-10-23 14:47:45,112 ERROR main [com.alibaba.druid.pool.DruidDataSource:865] - init datasource error, url: jdbc:oracle:thin:@10.1.0.145:1521:billing145
+java.sql.SQLException: Listener refused the connection with the following error:
+ORA-12505, TNS:listener does not currently know of SID given in connect descriptor
+ 
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:673)
+	at oracle.jdbc.driver.PhysicalConnection.<init>(PhysicalConnection.java:711)
+	at oracle.jdbc.driver.T4CConnection.<init>(T4CConnection.java:385)
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:30)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:558)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:149)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:218)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:143)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1515)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1578)
+	at com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:854)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:1222)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:1218)
+	at com.newland.boss.cloud.web.query.util.DBPoolConnection.getConnection(DBPoolConnection.java:50)
+	at com.newland.boss.cloud.web.query.dao.MetricsDetailDao.queryTaskList(MetricsDetailDao.java:35)
+	at com.newland.boss.cloud.web.query.dao.MetricsDetailDao.main(MetricsDetailDao.java:104)
+Caused by: oracle.net.ns.NetException: Listener refused the connection with the following error:
+ORA-12505, TNS:listener does not currently know of SID given in connect descriptor
+ 
+	at oracle.net.ns.NSProtocolStream.negotiateConnection(NSProtocolStream.java:272)
+	at oracle.net.ns.NSProtocol.connect(NSProtocol.java:263)
+	at oracle.jdbc.driver.T4CConnection.connect(T4CConnection.java:1360)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:486)
+	... 15 more
+2018-10-23 14:47:45,133 ERROR main [com.alibaba.druid.pool.DruidDataSource:898] - {dataSource-1} init error
+java.sql.SQLException: Listener refused the connection with the following error:
+ORA-12505, TNS:listener does not currently know of SID given in connect descriptor
+ 
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:673)
+	at oracle.jdbc.driver.PhysicalConnection.<init>(PhysicalConnection.java:711)
+	at oracle.jdbc.driver.T4CConnection.<init>(T4CConnection.java:385)
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:30)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:558)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:149)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:218)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:143)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1515)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1578)
+	at com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:854)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:1222)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:1218)
+	at com.newland.boss.cloud.web.query.util.DBPoolConnection.getConnection(DBPoolConnection.java:50)
+	at com.newland.boss.cloud.web.query.dao.MetricsDetailDao.queryTaskList(MetricsDetailDao.java:35)
+	at com.newland.boss.cloud.web.query.dao.MetricsDetailDao.main(MetricsDetailDao.java:104)
+Caused by: oracle.net.ns.NetException: Listener refused the connection with the following error:
+ORA-12505, TNS:listener does not currently know of SID given in connect descriptor
+ 
+	at oracle.net.ns.NSProtocolStream.negotiateConnection(NSProtocolStream.java:272)
+	at oracle.net.ns.NSProtocol.connect(NSProtocol.java:263)
+	at oracle.jdbc.driver.T4CConnection.connect(T4CConnection.java:1360)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:486)
+	... 15 more
+2018-10-23 14:47:45,134 INFO main [com.alibaba.druid.pool.DruidDataSource:923] - {dataSource-1} inited
+2018-10-23 14:47:45,147 ERROR Druid-ConnectionPool-Create-1809380257 [com.alibaba.druid.pool.DruidDataSource:2454] - create connection SQLException, url: jdbc:oracle:thin:@10.1.0.145:1521:billing145, errorCode 12505, state 66000
+java.sql.SQLException: Listener refused the connection with the following error:
+ORA-12505, TNS:listener does not currently know of SID given in connect descriptor
+ 
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:673)
+	at oracle.jdbc.driver.PhysicalConnection.<init>(PhysicalConnection.java:711)
+	at oracle.jdbc.driver.T4CConnection.<init>(T4CConnection.java:385)
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:30)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:558)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:149)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:218)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:143)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1515)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1578)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2451)
+Caused by: oracle.net.ns.NetException: Listener refused the connection with the following error:
+ORA-12505, TNS:listener does not currently know of SID given in connect descriptor
+ 
+	at oracle.net.ns.NSProtocolStream.negotiateConnection(NSProtocolStream.java:272)
+	at oracle.net.ns.NSProtocol.connect(NSProtocol.java:263)
+	at oracle.jdbc.driver.T4CConnection.connect(T4CConnection.java:1360)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:486)
+	... 10 more
+2018-10-23 14:47:45,163 ERROR Druid-ConnectionPool-Create-1809380257 [com.alibaba.druid.pool.DruidDataSource:2454] - create connection SQLException, url: jdbc:oracle:thin:@10.1.0.145:1521:billing145, errorCode 12505, state 66000
+java.sql.SQLException: Listener refused the connection with the following error:
+ORA-12505, TNS:listener does not currently know of SID given in connect descriptor
+ 
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:673)
+	at oracle.jdbc.driver.PhysicalConnection.<init>(PhysicalConnection.java:711)
+	at oracle.jdbc.driver.T4CConnection.<init>(T4CConnection.java:385)
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:30)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:558)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:149)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:218)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:143)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1515)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1578)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2451)
+Caused by: oracle.net.ns.NetException: Listener refused the connection with the following error:
+ORA-12505, TNS:listener does not currently know of SID given in connect descriptor
+ 
+	at oracle.net.ns.NSProtocolStream.negotiateConnection(NSProtocolStream.java:272)
+	at oracle.net.ns.NSProtocol.connect(NSProtocol.java:263)
+	at oracle.jdbc.driver.T4CConnection.connect(T4CConnection.java:1360)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:486)
+	... 10 more
+2018-10-23 14:47:58,375 ERROR main [com.alibaba.druid.pool.DruidDataSource:865] - init datasource error, url: jdbc:oracle:thin:@10.1.0.145:1521:billing145
+java.sql.SQLException: Listener refused the connection with the following error:
+ORA-12505, TNS:listener does not currently know of SID given in connect descriptor
+ 
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:673)
+	at oracle.jdbc.driver.PhysicalConnection.<init>(PhysicalConnection.java:711)
+	at oracle.jdbc.driver.T4CConnection.<init>(T4CConnection.java:385)
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:30)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:558)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:149)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:218)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:143)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1515)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1578)
+	at com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:854)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:1222)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:1218)
+	at com.newland.boss.cloud.web.query.util.DBPoolConnection.getConnection(DBPoolConnection.java:50)
+	at com.newland.boss.cloud.web.query.dao.MetricsDetailDao.queryTaskList(MetricsDetailDao.java:35)
+	at com.newland.boss.cloud.web.query.dao.MetricsDetailDao.main(MetricsDetailDao.java:104)
+Caused by: oracle.net.ns.NetException: Listener refused the connection with the following error:
+ORA-12505, TNS:listener does not currently know of SID given in connect descriptor
+ 
+	at oracle.net.ns.NSProtocolStream.negotiateConnection(NSProtocolStream.java:272)
+	at oracle.net.ns.NSProtocol.connect(NSProtocol.java:263)
+	at oracle.jdbc.driver.T4CConnection.connect(T4CConnection.java:1360)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:486)
+	... 15 more
+2018-10-23 14:47:58,395 ERROR main [com.alibaba.druid.pool.DruidDataSource:898] - {dataSource-1} init error
+java.sql.SQLException: Listener refused the connection with the following error:
+ORA-12505, TNS:listener does not currently know of SID given in connect descriptor
+ 
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:673)
+	at oracle.jdbc.driver.PhysicalConnection.<init>(PhysicalConnection.java:711)
+	at oracle.jdbc.driver.T4CConnection.<init>(T4CConnection.java:385)
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:30)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:558)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:149)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:218)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:143)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1515)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1578)
+	at com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:854)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:1222)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:1218)
+	at com.newland.boss.cloud.web.query.util.DBPoolConnection.getConnection(DBPoolConnection.java:50)
+	at com.newland.boss.cloud.web.query.dao.MetricsDetailDao.queryTaskList(MetricsDetailDao.java:35)
+	at com.newland.boss.cloud.web.query.dao.MetricsDetailDao.main(MetricsDetailDao.java:104)
+Caused by: oracle.net.ns.NetException: Listener refused the connection with the following error:
+ORA-12505, TNS:listener does not currently know of SID given in connect descriptor
+ 
+	at oracle.net.ns.NSProtocolStream.negotiateConnection(NSProtocolStream.java:272)
+	at oracle.net.ns.NSProtocol.connect(NSProtocol.java:263)
+	at oracle.jdbc.driver.T4CConnection.connect(T4CConnection.java:1360)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:486)
+	... 15 more
+2018-10-23 14:47:58,397 INFO main [com.alibaba.druid.pool.DruidDataSource:923] - {dataSource-1} inited
+2018-10-23 14:47:58,426 ERROR Druid-ConnectionPool-Create-1098573588 [com.alibaba.druid.pool.DruidDataSource:2454] - create connection SQLException, url: jdbc:oracle:thin:@10.1.0.145:1521:billing145, errorCode 12505, state 66000
+java.sql.SQLException: Listener refused the connection with the following error:
+ORA-12505, TNS:listener does not currently know of SID given in connect descriptor
+ 
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:673)
+	at oracle.jdbc.driver.PhysicalConnection.<init>(PhysicalConnection.java:711)
+	at oracle.jdbc.driver.T4CConnection.<init>(T4CConnection.java:385)
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:30)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:558)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:149)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:218)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:143)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1515)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1578)
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2451)
+Caused by: oracle.net.ns.NetException: Listener refused the connection with the following error:
+ORA-12505, TNS:listener does not currently know of SID given in connect descriptor
+ 
+	at oracle.net.ns.NSProtocolStream.negotiateConnection(NSProtocolStream.java:272)
+	at oracle.net.ns.NSProtocol.connect(NSProtocol.java:263)
+	at oracle.jdbc.driver.T4CConnection.connect(T4CConnection.java:1360)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:486)
+	... 10 more
+2018-10-23 14:48:49,757 INFO main [com.alibaba.druid.pool.DruidDataSource:923] - {dataSource-1} inited
+2018-10-23 15:06:38,508 INFO main [com.alibaba.druid.pool.DruidDataSource:923] - {dataSource-1} inited
+2018-10-23 15:08:48,178 INFO main [com.alibaba.druid.pool.DruidDataSource:923] - {dataSource-1} inited
+2018-10-23 15:10:39,874 INFO main [com.alibaba.druid.pool.DruidDataSource:923] - {dataSource-1} inited
+2018-10-23 15:11:53,654 INFO main [com.alibaba.druid.pool.DruidDataSource:923] - {dataSource-1} inited
+2018-10-23 15:12:19,953 INFO main [com.alibaba.druid.pool.DruidDataSource:923] - {dataSource-1} inited
+2018-10-23 15:13:21,507 INFO main [com.alibaba.druid.pool.DruidDataSource:923] - {dataSource-1} inited
+2018-10-23 15:19:23,978 INFO main [com.alibaba.druid.pool.DruidDataSource:923] - {dataSource-1} inited
+2018-10-23 15:30:22,838 INFO main [com.alibaba.druid.pool.DruidDataSource:923] - {dataSource-1} inited
+2018-10-23 15:31:32,084 INFO main [com.alibaba.druid.pool.DruidDataSource:923] - {dataSource-1} inited
+2018-10-23 15:32:44,950 INFO main [com.alibaba.druid.pool.DruidDataSource:923] - {dataSource-1} inited
+2018-10-23 15:51:42,236 INFO main [com.alibaba.druid.pool.DruidDataSource:923] - {dataSource-1} inited
+2018-10-23 15:53:21,597 INFO main [com.alibaba.druid.pool.DruidDataSource:923] - {dataSource-1} inited
+2018-10-23 15:59:16,989 INFO main [com.alibaba.druid.pool.DruidDataSource:923] - {dataSource-1} inited
+2018-10-23 16:00:18,908 INFO main [com.alibaba.druid.pool.DruidDataSource:923] - {dataSource-1} inited
+2018-10-23 16:03:57,297 INFO main [com.alibaba.druid.pool.DruidDataSource:923] - {dataSource-1} inited
+2018-10-29 11:01:00,396 ERROR Thread-1 [com.alibaba.druid.pool.DruidDataSource:903] - {dataSource-1} init error
+java.lang.NullPointerException
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:301)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:358)
+	at com.alibaba.druid.util.JdbcUtils.createDriver(JdbcUtils.java:585)
+	at com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:815)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:1222)
+	at com.alibaba.druid.pool.DruidDataSource.getConnection(DruidDataSource.java:1218)
+	at com.newland.boss.cloud.web.query.util.DBPoolConnection.getConnection(DBPoolConnection.java:80)
+	at com.newland.boss.cloud.web.query.dao.SQLQueryDao.sqlQueryList(SQLQueryDao.java:53)
+	at com.newland.boss.test.DBThread.run(DBThread.java:48)
